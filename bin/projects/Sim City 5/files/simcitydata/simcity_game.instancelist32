@@ -1,4 +1,4 @@
-; 2649/12081 (21%)
+; 2692/12081 (22%)
 abandonedalert
 achievementslayout
 advisor_female_regional
@@ -12,6 +12,8 @@ air-pollution-map---air-pollution
 airpollutionpainter
 alert-numbershield
 alerttemplate
+alerttemplatecirclebar
+alerttemplatenocount
 alerttemplatenocountcirclebar
 alerttemplatespeech
 alldatalayerpanel
@@ -25,6 +27,7 @@ avatar_frame_normal
 avatar_frame_offline
 avatar_frame_online
 avatar_frame_player
+avatarfriend
 avatartemplate
 avenue
 bakery
@@ -40,6 +43,9 @@ borderoffline
 borderonline
 boundaryuiavatar
 breakingnews-bkgrnd
+breakingnewsearthquake
+breakingnewsmeteor
+breakingnewsplague
 breakingnewstornado
 bridgeproject
 btn_avatarpick_down
@@ -342,6 +348,7 @@ building_select_ring
 building_shadow
 buildingitemui
 buildingpointer
+buildingupgrade
 buildsatellitebutton
 bulldozedialog
 bulldozer
@@ -460,6 +467,7 @@ clipping-clr-hdr-lft
 clipping-clr-hdr-md
 clipping-clr-hdr-rgt
 closebutton
+coal
 coal_cleaner
 coal_cleaner_t2
 coal_garage
@@ -530,6 +538,7 @@ contextinfobg_transport
 contextinfobg_water
 contextpanel_gwconstructionphase
 contextpanel_gwoperating
+contributenumber
 coveredbyavatar
 cratefactory
 crime
@@ -665,6 +674,8 @@ dl_zone_r_buildings
 dlcdialog
 dots
 dotwhite
+dropdownitem
+dropdownpanel
 edgeblur
 edgeblurhrz
 editsnappoints
@@ -797,6 +808,7 @@ gpmm_coal_v2
 gpmm_pollution_v6
 gradient-lft
 gradient-rgt
+graphsign
 graph-sign
 greatworkintroduction
 greatworks_arcology
@@ -805,6 +817,7 @@ greatworks_solarfarm
 greatworks_spacecenter
 greatworkscompletion
 greatworkscompletion_benefiticon
+greatworksoption
 greatworksprerequisite
 green-world
 guide
@@ -1820,6 +1833,8 @@ killbug
 landvaluemeter
 launchsatellitebutton
 layers
+leaderboard
+leaderboardsign
 legendtemplate
 lightrail
 lightrailalert
@@ -1857,7 +1872,10 @@ mission_dig500coal
 mission_frame_white
 mission_frame_white_off
 missionobjective
+missionobjectiveprogress
 missionpnlglow
+missiontemplate
+modal
 mode_bigbiz
 mode_city2
 mode_region2
@@ -1872,10 +1890,13 @@ money-banner
 movetool
 navbutton07
 needresourcesalert
+negativethoughtballoonbuttontemplate
 new
+newsarticle
 newsinterupt
 newspaper
 newspaperbtn
+newstyle
 newstylebutton
 newsunlock
 newswirecardminishadow
@@ -1900,6 +1921,7 @@ palette_waterpollutionbar
 palette_waterpollutiontick
 palettebulldoze_advisor_backing
 palettecontextualinfo
+palettecontextualinfoautomotivealert
 paletteicon_roads
 paletteicon_zoneroads
 paletteicon_zones
@@ -1908,6 +1930,7 @@ paletteinfoboat
 paletteinfobus
 paletteinfocasino
 paletteinfocivic
+paletteinfocoal
 paletteinfocultural
 paletteinfodestruction
 paletteinfoeducation
@@ -1930,6 +1953,7 @@ paletteinfotemplate
 paletteinfowater
 paletteinfozones
 palettelayertoggle2
+palettepanel
 palettepanel_btn_addbldg_disabled
 palettepanel_btn_addbldg_down
 palettepanel_btn_addbldg_normal
@@ -1965,6 +1989,7 @@ palettepanel_subpanelleft_uppertab_bg
 palettepanel_subpanelmiddle_bg
 palettepanel_subpanelright_bg
 palettepaneleditor3
+palettepanelroads
 paletterolloverpreview
 paletterolloverupgradeitem
 palette-shade
@@ -2005,7 +2030,13 @@ popup_green_glass_style
 popup_green_glass_style2
 popup_white_glass_style
 popupmenuitem
+popupmenuitemtoggle
+popupmenuitemtoggle-deliveries
+popupmenuitemtoggle-globaldeliveries
+popupmenuitemtoggle-globaltrade
+popupmenuitemtoggle-io
 popupmenuitemtoggle-onoff
+positivethoughtballoonbuttontemplate
 power
 power_coal_t1_generator
 power_coal_t1_generator2
@@ -2243,6 +2274,7 @@ roads
 roadselect
 robotank-lazer-glow
 rollover_happiness_chatbubble
+rolloverbase
 rolloverbkgrnd
 rolloverblocktext1row2column
 rolloverblocktext2row2column
@@ -2254,13 +2286,20 @@ rolloverblocktexttitle3row2column
 rolloverblocktexttitle4row2column
 rollovercarrot
 rolloverdensitylegend
+rolloverhappiness
 rolloverhappinesstext
 rolloverheaderoff
 rolloverheaderon
+rollovericonhappiness
 rolloveritembutton
+rolloveritemcoalgpmm
 rolloveritemdivider
 rolloveritememptyspace10pt
+rolloveritemiconmeter
+rolloveritemiconmeter2
 rolloveritemiconmeterandtext
+rolloveritemiconvalue
+rolloveritemlongtext
 rolloveritemmetertextandtitle
 rolloveritemneutralcolormeterandtext
 rolloveritemnormaltextcenter
@@ -2349,6 +2388,7 @@ speech-balloon-carrot-lft
 speech-balloon-carrot-lft2
 speechballooneditor
 speechballoonmultipageacceptdismiss
+speechbubblealert
 speedcontrolbg
 speedcontrolbg2
 speedpanel
@@ -2375,6 +2415,7 @@ taxspinner
 techlevelmeter2
 templatebuilding
 temproadmap
+test-toggle-button
 text_input_style
 text_input_style002
 textinputfield
@@ -2445,6 +2486,7 @@ trade-panel-t
 trade-panel-tl
 trade-panel-tr
 tradetokenstatusicon
+tradewall_basicdata
 tradewall_icon_education
 tradewall_icon_education_export
 tradewall_icon_education_import
@@ -2627,6 +2669,7 @@ window-r
 window-t
 window-tl
 window-tr
+windpower
 windpowerlargeturbinemodule
 win-l
 win-m

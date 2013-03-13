@@ -1,5 +1,5 @@
 <types>
-  <type id="0x00B1B104" ext="prop"   />
+  <type id="0x00B1B104" ext="prop"    >Property List</type>
   <type id="0x02393756" ext="cur"    />
   <type id="0x024A0E52" ext="txt"    />
   <type id="0x02FAC0B6" ext="locale" />
@@ -10,9 +10,9 @@
   <type id="0x07B53899"              />
   <type id="0x08068AEB"              />
   <type id="0x08068AEC"              />
-  <type id="0x0A4D8D09"              />
+  <type id="0x0A4D8D09" ext="bnk"    />
   <type id="0x0A98EAF0" ext="json"   />
-  <type id="0x0D9E5710"              />
+  <type id="0x0D9E5710" ext="wav"    />
   <type id="0x12952634" ext="dat"    />
   <type id="0x276CA4B9" ext="ttf"    />
   <type id="0x2C978DB6" ext="css"    />

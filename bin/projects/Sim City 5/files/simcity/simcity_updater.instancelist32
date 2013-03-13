@@ -1,4 +1,4 @@
-; 585/952 (61%)
+; 604/952 (63%)
 achievementcategories
 achievementpopup
 achievements_frame
@@ -173,6 +173,7 @@ checkbox_selectedhigh
 checkboxdisabled
 checkboxenabled
 citilogsidebar
+citylogexpandedcontainer
 citylog-icon-citylog
 citylog-icon-citylog-white
 cityloglgbackground
@@ -201,6 +202,8 @@ cloud01
 cloud03
 cloud04
 configmanager
+containergame
+containerhome3
 contentunavailablemessage
 continuetab
 create_breadcrumbs01
@@ -232,11 +235,13 @@ editor
 editorconfig
 editorstyles
 errorwindow
+eventinviteitem
 fe-horizontalseparator
 fonttest
 friendlistcategory
 friendlistfooter
 friendlistheader
+friendrowempty
 friendslist-addfriendbuttonup
 friendslist-button-originigo-off
 friendslist-chatbuttonup
@@ -244,6 +249,8 @@ friendslistitem
 friendslist-nofriends
 friendspanel_triangle
 friendspanel_triangle_down
+friendsrowlight
+gamebrowsersmall
 gameconfig
 gameentryui_min
 gem_button_check_off_norm
@@ -375,6 +382,7 @@ mission-3shine
 mission-newglow
 modaldialogs
 mood-marker
+mygamespanel
 mygamessidebarwhosplayingavatar
 nav_venetianblind_vert_default
 nav_venetianblind_vert_disabled
@@ -395,6 +403,8 @@ optionshowtutorials
 optionspanel
 originlogo-orange-40x30
 originlogo-white-40x30
+paginationdot
+paginationstar
 pallete_buttonrounded_shadow
 panel_tab
 panel-background
@@ -485,10 +495,12 @@ shadetr
 shine2
 sidefadel
 sidefader
+sillylogo
 simcityglobal
 simcityworldlogo
 simcityworldpanel
 six-degrees-of-simcity
+smavatar
 star_ratings_zero
 stickymenu_planar
 store
@@ -504,9 +516,11 @@ tabsmallnorm
 tabsmallon
 tabsmallover
 textinputstyles
+textlistitembkgrnd
 textstyles
 thumbnail
 thumb-sawyer
+tinyfriendthumbnail
 title-lock
 topnavl
 topnavldrk
@@ -567,6 +581,7 @@ vignette
 waitingroom
 webkitpanel
 webkitpanel_min
+widgetevents
 widgetfillbl
 widgetfillbm
 widgetfillbr
@@ -582,5 +597,9 @@ widgetframer
 widgetframetl
 widgetframetm
 widgetframetr
+widgetfriends
+widgetjoingame
+widgetmessage
+widgetnewgame
 windownineslicestyles
 windowstyles

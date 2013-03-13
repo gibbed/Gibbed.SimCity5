@@ -1,11 +1,13 @@
-; 50/175 (28%)
+; 57/175 (32%)
 agentquery
 alerts
+automatedachievements
 automatedregiontemplates
 automatedticker
 berlin
 budget
 buildingrollover
+categoryinfo
 cheatconsole
 cityspecializationguide
 commonbuttons
@@ -14,10 +16,14 @@ datalayerlegend
 dialogmessages
 errormessages
 gameentry
+gifting
 globalstats
 globalui
 herovil
+importexportpanel
 launcher
+layernames
+leaderboard
 legal
 loadingscreen
 loadingtips
@@ -43,6 +49,7 @@ toolcategories
 tools
 tooltips
 toytaskpanel
+tradewall
 tutorials
 unitnamesrw1d1
 unitnamesrw1d2
