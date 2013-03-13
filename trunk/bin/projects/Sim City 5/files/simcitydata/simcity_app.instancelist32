@@ -1,4 +1,4 @@
-; 702/1875 (37%)
+; 722/1875 (38%)
 03_green_challenge_large_gamescom
 03_green_challenge_small_gamescom
 07_population_explosion_large
@@ -186,6 +186,7 @@ checkbox_selectedhigh
 checkboxdisabled
 checkboxenabled
 citilogsidebar
+citylogexpandedcontainer
 citylog-icon-citylog
 citylog-icon-citylog-white
 cityloglgbackground
@@ -220,6 +221,8 @@ confluence_1028_zoom
 confluence_1029_zoom
 confluence_1030_zoom
 confluence_isometricmap
+containergame
+containerhome3
 contentunavailablemessage
 continuetab
 create_breadcrumbs01
@@ -252,11 +255,13 @@ editor
 editorconfig
 editorstyles
 errorwindow
+eventinviteitem
 fe-horizontalseparator
 fonttest
 friendlistcategory
 friendlistfooter
 friendlistheader
+friendrowempty
 friendslist-addfriendbuttonup
 friendslist-button-originigo-off
 friendslist-chatbuttonup
@@ -264,6 +269,7 @@ friendslistitem
 friendslist-nofriends
 friendspanel_triangle
 friendspanel_triangle_down
+friendsrowlight
 front_end_hub
 full-cliffsidevista
 gallia_1026_zoom
@@ -283,6 +289,7 @@ gallia_1039_zoom
 gallia_1040_zoom
 gallia_1041_zoom
 gallia_isometricmap
+gamebrowsersmall
 gameconfig
 gameentryui_min
 gem_button_check_off_norm
@@ -453,6 +460,7 @@ mission-newglow
 modaldialogs
 modelviewer
 mood-marker
+mygamespanel
 mygamessidebarwhosplayingavatar
 nav_venetianblind_vert_default
 nav_venetianblind_vert_disabled
@@ -473,6 +481,8 @@ optionshowtutorials
 optionspanel
 originlogo-orange-40x30
 originlogo-white-40x30
+paginationdot
+paginationstar
 pallete_buttonrounded_shadow
 panel_tab
 panel-background
@@ -589,11 +599,13 @@ shadetr
 shine2
 sidefadel
 sidefader
+sillylogo
 simcity
 simcityglobal
 simcityworldlogo
 simcityworldpanel
 six-degrees-of-simcity
+smavatar
 star_ratings_zero
 stickymenu_planar
 store
@@ -608,7 +620,9 @@ tabbracketr
 tabsmallnorm
 tabsmallon
 tabsmallover
+test2
 textinputstyles
+textlistitembkgrnd
 textstyles
 thumb-capetrinity
 thumb-confluence
@@ -620,6 +634,7 @@ thumbnail
 thumb-reflection
 thumb-sawyer
 thumb-twincities
+tinyfriendthumbnail
 title-lock
 topnavl
 topnavldrk
@@ -684,6 +699,7 @@ vignette
 waitingroom
 webkitpanel
 webkitpanel_min
+widgetevents
 widgetfillbl
 widgetfillbm
 widgetfillbr
@@ -699,5 +715,9 @@ widgetframer
 widgetframetl
 widgetframetm
 widgetframetr
+widgetfriends
+widgetjoingame
+widgetmessage
+widgetnewgame
 windownineslicestyles
 windowstyles
