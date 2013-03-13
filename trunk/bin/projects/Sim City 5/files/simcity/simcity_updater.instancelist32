@@ -1,4 +1,4 @@
-; 411/952 (43%)
+; 412/952 (43%)
 achievementcategories
 achievementpopup
 achievements_panel
@@ -171,6 +171,7 @@ ea_mp_simcityru-regular
 ea_mp_simcityru-semibold
 eaorangelogosm
 editor
+editorconfig
 editorstyles
 errorwindow
 fe-horizontalseparator

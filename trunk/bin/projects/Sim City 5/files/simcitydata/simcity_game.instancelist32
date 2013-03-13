@@ -1,4 +1,4 @@
-; 832/12081 (6%)
+; 849/12081 (7%)
 abandonedalert
 achievementslayout
 advisor_female_regional
@@ -67,6 +67,8 @@ buildingpointer
 buildsatellitebutton
 bulldozedialog
 bus
+busalert
+button_zoomin_high
 button_zoomin_normal
 button_zoomout_normal
 camcontrol
@@ -163,8 +165,10 @@ dl_zone_r_buildings
 dlcdialog
 edgeblur
 edgeblurhrz
+educationalert
 educatione2
 electronics
+empty
 empty_field
 errormodal
 export
@@ -174,6 +178,7 @@ fire-fire_past-events
 fire-fire_risk
 fullresourcesalert
 garbage
+garbagealert
 genericcost
 genericplop
 globalui2
@@ -222,8 +227,12 @@ happinesssmallbarfill+3
 happinesssmallbarfill+4
 happinesssmallbarfill+5
 hashpatern
+hazmatfirealert
 health
+healthalert
 heavyrail
+heavyrailalert
+homelessalert
 hotel
 hud-btn-sm-norm
 hud-btn-sm-on-norm
@@ -506,12 +515,14 @@ imagecapturefeedback
 imex
 info_mission_bkgrnd
 infobutton
+injuryalert
 killbug
 landvaluemeter
 launchsatellitebutton
 layers
 legendtemplate
 lightrail
+lightrailalert
 ll_corner
 loadingmodal
 main_button_tab_lft
@@ -576,6 +587,7 @@ paletteinfoimex
 paletteinfolightrail
 paletteinfomining
 paletteinfooil
+paletteinfoore
 paletteinfopolice
 paletteinfopower
 paletteinforoads
@@ -631,6 +643,7 @@ rci_unzone_rollover
 rcizonealert
 rec_cornerframe
 rec-dot
+recyclingalert
 region_cityabandoned
 region_cityunclaimed
 regionboxnameplate
@@ -669,6 +682,7 @@ ring-off
 ring-on
 rlvr-button_footer
 rlvr-zot_header
+roadalert
 roads
 roadselect
 robotank-lazer-glow
@@ -715,6 +729,7 @@ settingsslider
 sewage
 sewage_map-buildings
 sewage_map-ground-pollution
+sewagealert
 shadow
 shadow-hrz
 shadow-vrt
@@ -828,6 +843,8 @@ wateralert
 waterinfobar
 water-table
 water-table_pollution
+watertabledryalert
+watertablelowalert
 windpowerlargeturbinemodule
 workeralert
 zones

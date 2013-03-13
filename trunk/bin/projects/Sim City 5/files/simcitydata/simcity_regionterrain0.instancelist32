@@ -1,4 +1,4 @@
-; 104/700 (14%)
+; 106/700 (15%)
 ecomap_x00_y00_mip3
 ecomap_x00_y00_mip4
 ecomap_x00_y01_mip2
@@ -85,12 +85,14 @@ heightmap_x06_y06_mip0
 heightmap_x06_y07_mip0
 heightmap_x06_y08_mip0
 heightmap_x06_y09_mip0
+heightmap_x06_y11_mip0
 heightmap_x07_y05_mip0
 heightmap_x07_y06_mip0
 heightmap_x07_y07_mip0
 heightmap_x07_y08_mip0
 heightmap_x07_y09_mip0
 heightmap_x07_y10_mip0
+heightmap_x07_y11_mip0
 heightmap_x08_y04_mip0
 heightmap_x08_y05_mip0
 heightmap_x08_y06_mip0
