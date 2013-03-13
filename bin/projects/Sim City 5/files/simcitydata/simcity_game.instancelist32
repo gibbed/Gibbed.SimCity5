@@ -1,4 +1,4 @@
-; 773/12081 (6%)
+; 804/12081 (6%)
 abandonedalert
 achievementslayout
 advisor_female_regional
@@ -176,6 +176,10 @@ globalui2
 glow
 glow-white
 government
+greatworks_arcology
+greatworks_intairport
+greatworks_solarfarm
+greatworks_spacecenter
 gw_operatingalert
 gw_operatinghappy
 gw_pendingstate_base
@@ -188,12 +192,15 @@ gw_spinner_red
 gw_spinneroperating_base
 gw_spinneroperating_base_red
 gwarcologydensitymeter
+gwlowerpanel_catalogitem
 gwlowerpanel_construction_p1
 gwlowerpanel_construction_p2
 gwlowerpanel_operating
 gwlowerpanel_permit
 gwlowerpanel_unselected
 gwop_resource_row
+gwsellsheetdata
+gwsellsheetdataitem
 happinessbigbarfill+1
 happinessbigbarfill+2
 happinessbigbarfill+3
@@ -218,12 +225,15 @@ icn_alert_low_water
 icn_alert_rci_abandoned
 icn_alert_rci_rubble
 icn_alert-criminal
+icn_alert-fires
 icn_alert-garbage
 icn_alert-low-ore
 icn_alert-no-alloy
 icn_alert-no-coal
 icn_alert-no-oil
 icn_alert-no-power
+icn_alert-no-water
+icn_alert-sick
 icn_arcologymeter_lowpopulation
 icn_arrow_collapse
 icn_arrow_expand
@@ -338,8 +348,10 @@ icn-alert-borderui-resourceneeded
 icn-alert-borderui-resourceopportunity
 icn-alert-exclamation
 icn-balloons-air-industrial-desirability
+icn-balloons-air-population
 icn-balloons-air-residential-desirability
 icn-balloons-bus
+icn-balloons-casino
 icn-balloons-coal
 icn-balloons-crime
 icn-balloons-electronics
@@ -408,6 +420,8 @@ icn-rollover-icons-challenges-on
 icn-rollover-icons-leaderboard-norm
 icn-rollover-icons-leaderboard-on
 icn-simoleon
+icn-specialization-drilling
+icn-specialization-electrics
 icn-specialization-none
 icn-specialization-trade
 icn-specialization-university
@@ -418,8 +432,11 @@ icn-techlevel-3
 icn-techlevel-3-white
 icn-toy-badge-power
 icn-trade-alloy
+icn-trade-alloy-dark
 icn-trade-cashgifting-minus
 icn-trade-cashgifting-plus
+icn-trade-coal
+icn-trade-computer
 icn-trade-education
 icn-trade-education_red
 icn-trade-education_white
@@ -430,6 +447,7 @@ icn-trade-fire-department_white
 icn-trade-freight
 icn-trade-freight_red
 icn-trade-freight_white
+icn-trade-fuel
 icn-trade-garbage
 icn-trade-garbage_red
 icn-trade-garbage_white
@@ -440,6 +458,7 @@ icn-trade-health
 icn-trade-health_red
 icn-trade-health_white
 icn-trade-metal
+icn-trade-oil
 icn-trade-ore
 icn-trade-plastic
 icn-trade-police
@@ -457,6 +476,9 @@ icn-trade-sewage_white
 icn-trade-shoppers
 icn-trade-shoppers_red
 icn-trade-shoppers_white
+icn-trade-students
+icn-trade-television
+icn-trade-tourism
 icn-trade-water
 icn-trade-water_red
 icn-trade-water_white
@@ -476,6 +498,7 @@ info_mission_bkgrnd
 infobutton
 killbug
 landvaluemeter
+layers
 legendtemplate
 lightrail
 ll_corner
@@ -510,6 +533,7 @@ newsinterupt
 newspaper
 newsunlock
 newswirecardminishadow
+nuclearpowermediumgeneratormodule
 oil
 oil_map
 oilalert
@@ -614,6 +638,7 @@ regionmessageform
 regionpaletteinfotemplate
 region-to-city-button
 regionui
+regionunits
 regionviewitem
 regionwallcontaineringame
 regionwallnotificationscontainer
@@ -631,6 +656,7 @@ roads
 roadselect
 robotank-lazer-glow
 rolloverblocktext1row2column
+rolloverblocktext2row2column
 rolloverblocktext3row2column
 rolloverblocktexttitle
 rolloverblocktexttitle1row2column
@@ -640,6 +666,7 @@ rolloverblocktexttitle4row2column
 rollovercarrot
 rolloverdensitylegend
 rolloverhappinesstext
+rolloveritembutton
 rolloveritemdivider
 rolloveritememptyspace10pt
 rolloveritemiconmeterandtext
@@ -688,6 +715,10 @@ system_info_education_edu
 system_info_education_tech
 systeminfowaterbar
 t_govt_hq_cityhallbase_preview
+t_greatworks_arcology
+t_greatworks_international_airport
+t_greatworks_solarfarm
+t_greatworks_spacecenter
 taxesbasic2
 taxescomplex2
 taxesintermediate2

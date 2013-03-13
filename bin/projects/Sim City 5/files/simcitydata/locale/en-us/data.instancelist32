@@ -1,4 +1,4 @@
-; 46/174 (26%)
+; 50/174 (28%)
 agentquery
 alerts
 automatedregiontemplates
@@ -40,8 +40,12 @@ textfeedbackresidentialw1rollover
 textfeedbacktoyrollover
 ticker
 toolcategories
+tools
 tooltips
 toytaskpanel
 tutorials
+unitnamesrw1d1
+unitnamesrw1d2
+unitnamesrw1d3
 units
 updatemanagererrorcodes
