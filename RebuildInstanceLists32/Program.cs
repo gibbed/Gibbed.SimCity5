@@ -121,7 +121,7 @@ namespace RebuildInstanceLists32
 
             Console.WriteLine("Searching for archives...");
 
-            var findPaths = new string[]
+            var findPaths = new[]
             {
                 "SimCity",
                 "SimCityData",
