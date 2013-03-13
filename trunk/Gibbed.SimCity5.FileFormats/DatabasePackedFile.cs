@@ -191,6 +191,13 @@ namespace Gibbed.SimCity5.FileFormats
                     uint globalGroupId = hasGlobalGroupId ? data.ReadValueU32(endian) : 0xFFFFFFFF;
                     uint globalInstanceIdHi = hasGlobalInstanceIdHi ? data.ReadValueU32(endian) : 0xFFFFFFFF;
 
+                    if (hasGlobalInstanceIdHi == true &&
+                        globalInstanceIdHi != 0)
+                    {
+                        // sanity check: SC5 appears to never use upper 32-bits of instance ID
+                        throw new NotSupportedException();
+                    }
+
                     for (int i = 0; i < indexCount; i++)
                     {
                         uint typeId = hasGlobalTypeId ? globalTypeId : data.ReadValueU32(endian);
