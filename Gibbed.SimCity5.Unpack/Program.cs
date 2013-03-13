@@ -133,6 +133,8 @@ namespace Gibbed.SimCity5.Unpack
                     Indent = true,
                 };
 
+                Directory.CreateDirectory(outputPath);
+
                 var xmlPath = Path.Combine(outputPath, "files.xml");
                 using (var xml = XmlWriter.Create(xmlPath, settings))
                 {
