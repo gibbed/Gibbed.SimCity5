@@ -25,6 +25,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Xml;
 using System.Xml.Serialization;
 using Gibbed.IO;
 using Gibbed.SimCity5.FileFormats;
@@ -127,121 +128,207 @@ namespace Gibbed.SimCity5.Unpack
                 var dbpf = new DatabasePackedFile();
                 dbpf.Read(input);
 
-                //XmlWriter.Create()
-
-                if (dbpf.Entries.Count > 0)
+                var settings = new XmlWriterSettings()
                 {
-                    if (verbose == true)
+                    Indent = true,
+                };
+
+                var xmlPath = Path.Combine(outputPath, "files.xml");
+                using (var xml = XmlWriter.Create(xmlPath, settings))
+                {
+                    xml.WriteStartDocument();
+                    xml.WriteStartElement("files");
+
+                    if (dbpf.Entries.Count > 0)
                     {
-                        Console.WriteLine("Unpacking files...");
-                    }
-
-                    long current = 0;
-                    long total = dbpf.Entries.Count;
-                    var padding = total.ToString(CultureInfo.InvariantCulture).Length;
-
-                    foreach (var entry in dbpf.Entries)
-                    {
-                        current++;
-
-                        var typeInfo = typeLookup.GetTypeInfo(entry.Key.TypeId);
-
-                        bool isUnknown = false;
-                        string entryName;
-
-                        if (instance32Hashes.Contains(entry.Key.InstanceId) == true)
+                        if (verbose == true)
                         {
-                            entryName = instance32Hashes[entry.Key.InstanceId];
+                            Console.WriteLine("Unpacking files...");
                         }
-                        else if (instance64Hashes.Contains(entry.Key.InstanceId) == true)
+
+                        long current = 0;
+                        long total = dbpf.Entries.Count;
+                        var padding = total.ToString(CultureInfo.InvariantCulture).Length;
+
+                        foreach (var entry in dbpf.Entries)
                         {
-                            entryName = instance64Hashes[entry.Key.InstanceId];
-                        }
-                        else
-                        {
-                            if (extractUnknowns == false)
+                            current++;
+
+                            var typeInfo = typeLookup.GetTypeInfo(entry.Key.TypeId);
+
+                            bool isUnknown = false;
+                            string entryName;
+
+                            if (instance32Hashes.Contains(entry.Key.InstanceId) == true)
+                            {
+                                entryName = instance32Hashes[entry.Key.InstanceId];
+                            }
+                            else if (instance64Hashes.Contains(entry.Key.InstanceId) == true)
+                            {
+                                entryName = instance64Hashes[entry.Key.InstanceId];
+                            }
+                            else
+                            {
+                                if (extractUnknowns == false)
+                                {
+                                    continue;
+                                }
+
+                                isUnknown = true;
+                                entryName = "#" + entry.Key.InstanceId.ToString("X16", CultureInfo.InvariantCulture);
+                            }
+
+                            if (typeInfo != null &&
+                                string.IsNullOrEmpty(typeInfo.Extension) == false)
+                            {
+                                entryName += "." + typeInfo.Extension;
+                            }
+                            else
+                            {
+                                entryName += ".#" + entry.Key.TypeId.ToString("X8", CultureInfo.InvariantCulture);
+                            }
+
+                            if (entry.Key.GroupId == 0)
+                            {
+                                entryName = Path.Combine("default", entryName);
+                            }
+                            else
+                            {
+                                entryName =
+                                    Path.Combine("#" + entry.Key.GroupId.ToString("X8", CultureInfo.InvariantCulture),
+                                                 entryName);
+                            }
+
+                            if (filter != null &&
+                                filter.IsMatch(entryName) == false)
                             {
                                 continue;
                             }
 
-                            isUnknown = true;
-                            entryName = "#" + entry.Key.InstanceId.ToString("X16", CultureInfo.InvariantCulture);
-                        }
-
-                        if (typeInfo != null &&
-                            string.IsNullOrEmpty(typeInfo.Extension) == false)
-                        {
-                            entryName += "." + typeInfo.Extension;
-                        }
-                        else
-                        {
-                            entryName += ".#" + entry.Key.TypeId.ToString("X8", CultureInfo.InvariantCulture);
-                        }
-
-                        if (entry.Key.GroupId == 0)
-                        {
-                            entryName = Path.Combine("default", entryName);
-                        }
-                        else
-                        {
-                            entryName =
-                                Path.Combine("#" + entry.Key.GroupId.ToString("X8", CultureInfo.InvariantCulture),
-                                             entryName);
-                        }
-
-                        if (filter != null &&
-                            filter.IsMatch(entryName) == false)
-                        {
-                            continue;
-                        }
-
-                        if (isUnknown == true)
-                        {
-                            entryName = Path.Combine("__UNKNOWN", entryName);
-                        }
-
-                        var entryPath = Path.Combine(outputPath, entryName);
-                        if (overwriteFiles == false &&
-                            File.Exists(entryPath) == true)
-                        {
-                            continue;
-                        }
-
-                        if (verbose == true)
-                        {
-                            Console.WriteLine("[{0}/{1}] {2}",
-                                              current.ToString(CultureInfo.InvariantCulture).PadLeft(padding),
-                                              total,
-                                              entryName);
-                        }
-
-                        var entryParent = Path.GetDirectoryName(entryPath);
-                        if (string.IsNullOrEmpty(entryParent) == false)
-                        {
-                            Directory.CreateDirectory(entryParent);
-                        }
-
-                        using (var output = File.Create(entryPath))
-                        {
-                            input.Seek(entry.Offset, SeekOrigin.Begin);
-                            if (entry.IsCompressed == true)
+                            if (isUnknown == true)
                             {
-                                var compressedBytes = input.ReadBytes(entry.CompressedSize);
-                                var uncompressedBytes = RefPack.Decompression.Decompress(compressedBytes);
-                                if (uncompressedBytes.Length != entry.UncompressedSize)
-                                {
-                                    throw new InvalidOperationException();
-                                }
-                                output.WriteBytes(uncompressedBytes);
+                                entryName = Path.Combine("__UNKNOWN", entryName);
                             }
-                            else
+
+                            var entryPath = Path.Combine(outputPath, entryName);
+
+                            xml.WriteStartElement("file");
+                            xml.WriteAttributeString("group",
+                                                     entry.Key.GroupId.ToString("X8", CultureInfo.InvariantCulture));
+                            xml.WriteAttributeString("instance",
+                                                     entry.Key.InstanceId.ToString("X16", CultureInfo.InvariantCulture));
+                            xml.WriteAttributeString("type",
+                                                     entry.Key.TypeId.ToString("X8", CultureInfo.InvariantCulture));
+                            xml.WriteValue(RelativePathTo(xmlPath, entryPath));
+                            xml.WriteEndElement();
+
+                            if (overwriteFiles == false &&
+                                File.Exists(entryPath) == true)
                             {
-                                output.WriteFromStream(input, entry.UncompressedSize);
+                                continue;
+                            }
+
+                            if (verbose == true)
+                            {
+                                Console.WriteLine("[{0}/{1}] {2}",
+                                                  current.ToString(CultureInfo.InvariantCulture).PadLeft(padding),
+                                                  total,
+                                                  entryName);
+                            }
+
+                            var entryParent = Path.GetDirectoryName(entryPath);
+                            if (string.IsNullOrEmpty(entryParent) == false)
+                            {
+                                Directory.CreateDirectory(entryParent);
+                            }
+
+                            using (var output = File.Create(entryPath))
+                            {
+                                input.Seek(entry.Offset, SeekOrigin.Begin);
+                                if (entry.IsCompressed == true)
+                                {
+                                    var compressedBytes = input.ReadBytes(entry.CompressedSize);
+                                    var uncompressedBytes = RefPack.Decompression.Decompress(compressedBytes);
+                                    if (uncompressedBytes.Length != entry.UncompressedSize)
+                                    {
+                                        throw new InvalidOperationException();
+                                    }
+                                    output.WriteBytes(uncompressedBytes);
+                                }
+                                else
+                                {
+                                    output.WriteFromStream(input, entry.UncompressedSize);
+                                }
                             }
                         }
                     }
+
+                    xml.WriteEndElement();
+                    xml.WriteEndDocument();
                 }
             }
+        }
+
+        private static string RelativePathTo(string fromPath, string toPath)
+        {
+            if (fromPath == null)
+            {
+                throw new ArgumentNullException("fromPath");
+            }
+
+            if (toPath == null)
+            {
+                throw new ArgumentNullException("toPath");
+            }
+
+            if (Path.IsPathRooted(fromPath) == true && Path.IsPathRooted(toPath) == true)
+            {
+                if (string.Compare(Path.GetPathRoot(fromPath), Path.GetPathRoot(toPath), StringComparison.OrdinalIgnoreCase) != 0)
+                {
+                    return toPath;
+                }
+            }
+
+            var relativePath = new List<string>();
+            string[] fromDirectories = fromPath.Split(Path.DirectorySeparatorChar);
+            string[] toDirectories = toPath.Split(Path.DirectorySeparatorChar);
+
+            int length = Math.Min(fromDirectories.Length, toDirectories.Length);
+            int lastCommonRoot = -1;
+
+            // find common root
+            for (int x = 0; x < length; x++)
+            {
+                if (string.Compare(fromDirectories[x], toDirectories[x], StringComparison.OrdinalIgnoreCase) != 0)
+                {
+                    break;
+                }
+
+                lastCommonRoot = x;
+            }
+
+            if (lastCommonRoot == -1)
+            {
+                return toPath;
+            }
+
+            // add relative folders in from path
+            for (int x = lastCommonRoot + 1; x < fromDirectories.Length; x++)
+            {
+                if (fromDirectories[x].Length > 0)
+                {
+                    relativePath.Add("..");
+                }
+            }
+
+            // add to folders to path
+            for (int x = lastCommonRoot + 1; x < toDirectories.Length; x++)
+            {
+                relativePath.Add(toDirectories[x]);
+            }
+
+            // create relative path
+            return string.Join(Path.DirectorySeparatorChar.ToString(CultureInfo.InvariantCulture), relativePath.ToArray());
         }
     }
 }
