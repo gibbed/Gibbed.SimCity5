@@ -1,4 +1,4 @@
-; 804/12081 (6%)
+; 832/12081 (6%)
 abandonedalert
 achievementslayout
 advisor_female_regional
@@ -12,6 +12,7 @@ air-pollution-map---air-pollution
 alert-numbershield
 alerttemplate
 alerttemplatenocountcirclebar
+alerttemplatespeech
 alldatalayerpanel
 articlerollover
 automatedachievementdata
@@ -63,6 +64,7 @@ building_select_ring
 building_shadow
 buildingitemui
 buildingpointer
+buildsatellitebutton
 bulldozedialog
 bus
 button_zoomin_normal
@@ -75,7 +77,9 @@ category_bulldoze_tab
 category_tab
 categorybuttonwithicon2
 checkmark
+citynamemoment
 cityspecializationguide
+citytradepanel
 clickpaneldivider
 closebutton
 coal_map
@@ -176,10 +180,15 @@ globalui2
 glow
 glow-white
 government
+greatworkintroduction
 greatworks_arcology
 greatworks_intairport
 greatworks_solarfarm
 greatworks_spacecenter
+greatworkscompletion
+greatworkscompletion_benefiticon
+greatworksprerequisite
+guidemedialog
 gw_operatingalert
 gw_operatinghappy
 gw_pendingstate_base
@@ -493,11 +502,13 @@ icn-upkeep
 ico_alert_warning_resources
 icoalertpower
 icoalertworkers
+imagecapturefeedback
 imex
 info_mission_bkgrnd
 infobutton
 killbug
 landvaluemeter
+launchsatellitebutton
 layers
 legendtemplate
 lightrail
@@ -531,6 +542,7 @@ module_unlock_counter
 needresourcesalert
 newsinterupt
 newspaper
+newstylebutton
 newsunlock
 newswirecardminishadow
 nuclearpowermediumgeneratormodule
@@ -599,6 +611,9 @@ power
 poweralert
 power-buildings
 progressbar_horizontal
+progressbar_vertical
+progressitem
+progressitemicon
 progressredtogreen_push
 puck-base
 puck-layer
@@ -633,6 +648,7 @@ regiondata_trade1
 regiondata_trade2
 regiongreatworksunclaimednameplate
 region-header
+regionlegendtemplate
 regionmessage
 regionmessageform
 regionpaletteinfotemplate
@@ -646,6 +662,7 @@ reportcontent
 reportcontenttype
 residential_female_04_small
 residential_female_06_small
+resourcetabbutton
 rewardglow
 reward-glow
 ring-off
@@ -702,12 +719,15 @@ shadow
 shadow-hrz
 shadow-vrt
 simcityui_min
+specializationsellsheet
+specializationtab
 spectatorlayout
 spectatormode-dashboard
 speech_bubble_carrot
 speechballoonbuttontemplate
 speech-balloon-carrot-lft
 speech-balloon-carrot-lft2
+speechballooneditor
 speechballoonmultipageacceptdismiss
 speedpanel
 stadium
@@ -725,6 +745,7 @@ taxesintermediate2
 taxspinner
 techlevelmeter2
 templatebuilding
+thoughtballoon_disasters_buttontemplate
 thoughtballoon_happiness1_acceptonlytemplate
 thoughtballoon_happiness1_buttontemplate
 thoughtballoon_happiness2_acceptonlytemplate
@@ -739,6 +760,10 @@ ticker_edge_fade
 ticker_edge_fade_right
 tickertape
 togglebutton
+tokentradeui
+tokenvehicle_avatar
+tokenvehicle_avatarcoverage
+tokenvehicles
 toolprogressbar
 toolunlockeffect
 tornado_background-ground
@@ -758,6 +783,7 @@ tornado_wind1
 tornado_wind2
 tourists
 toytaskpanel
+tradetokenstatusicon
 trendarrowl
 trendarrowr
 trenddown
@@ -794,6 +820,8 @@ unlock_effect_ring
 unlockeffect
 upgradealert
 utilitiesgauge
+utilitytradeitem
+utilitytradeui
 videorecframe
 water
 wateralert

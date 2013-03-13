@@ -1,4 +1,4 @@
-; 403/952 (42%)
+; 411/952 (43%)
 achievementcategories
 achievementpopup
 achievements_panel
@@ -43,7 +43,9 @@ button_next_disabled
 button_next_highlight
 button_next_normal
 button_next_selected
+button_palette_long_highlighted
 button_palette_long_normal
+button_palette_long_selected
 button_palette_rounded_disabled_launcher
 button_palette_rounded_highlighted
 button_palette_rounded_highlighted_sm
@@ -102,6 +104,7 @@ button-launcher-restart
 button-launcher-retry
 buttonnineslicestyles
 buttonstyles
+canvastestpage
 challengelbentry
 challengelbexpandedentry
 challengelbmyregionsdivider
@@ -122,8 +125,10 @@ checkboxdisabled
 checkboxenabled
 citylog-icon-citylog
 citylog-icon-citylog-white
+citylog-listentry
 citylog-panel
 citylog-popup
+citylog-userentry
 cityresources-icon-coal
 cityresources-icon-oil
 cityresources-icon-ore
@@ -169,6 +174,7 @@ editor
 editorstyles
 errorwindow
 fe-horizontalseparator
+fonttest
 friendlistcategory
 friendlistfooter
 friendlistheader
@@ -220,6 +226,7 @@ joingame_filterbyfriends
 joingame_filterbyfriends_button
 joingame_filterbymaps
 jointab
+launcher3d_planar
 leaderboard-button
 leaderboardcityentry
 leaderboardcontent
@@ -394,6 +401,7 @@ ui_wantsfears_tb_happy5_stretch-r
 ui_wantsfears_tb_happy5_stretch-t
 ui_wantsfears_tb_happy5_stretch-tl
 ui_wantsfears_tb_happy5_stretch-tr
+updater
 updater_min
 updaterpanel
 vignette
