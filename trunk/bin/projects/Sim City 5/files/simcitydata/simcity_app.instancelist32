@@ -1,4 +1,4 @@
-; 505/1875 (26%)
+; 516/1875 (27%)
 03_green_challenge_small_gamescom
 07_population_explosion_large
 07_population_explosion_small
@@ -30,6 +30,7 @@ btndeletehl
 btndeletenorm
 button_budget_normal
 button_carousel_normal
+button_carousel_selected
 button_close_window_disabled
 button_close_window_disabled2
 button_close_window_highlight
@@ -150,6 +151,7 @@ close-button_tab
 cloud01
 cloud03
 cloud04
+configmanager
 confluence_1026_zoom
 confluence_1027_zoom
 confluence_1028_zoom
@@ -169,6 +171,7 @@ createtab
 credits_background
 curtainscreen
 debuggridbg
+demo
 ea_ag_simcitystd-bk
 ea_ag_simcitystd-demi
 ea_arh2_simcity
@@ -180,6 +183,7 @@ ea_koreanagd_simcity-bold
 ea_mp_simcityru-regular
 ea_mp_simcityru-semibold
 eaorangelogosm
+editor
 editorstyles
 errorwindow
 fe-horizontalseparator
@@ -193,6 +197,7 @@ friendslistitem
 friendslist-nofriends
 friendspanel_triangle
 friendspanel_triangle_down
+front_end_hub
 full-cliffsidevista
 gallia_1026_zoom
 gallia_1027_zoom
@@ -346,14 +351,18 @@ maxis_logo-sm
 messageenter_normal
 minimap_slot
 miniregioninfotile
+missingavatar
 mission-1shine
 mission-2shine
 mission-3shine
 mission-newglow
 modaldialogs
+modelviewer
 mygamessidebarwhosplayingavatar
 newsitem
 noeditoruiconfig
+optiongamecamera
+optionshowtutorials
 optionspanel
 originlogo-orange-40x30
 originlogo-white-40x30
@@ -395,6 +404,7 @@ reflection_1030_zoom
 reflection_1031_zoom
 reflection_1032_zoom
 reflection_isometricmap
+reflection_loadingbackdrop
 regionalchallengecontent
 regioncakechallengestub
 regioncaketogglingregionwall
@@ -426,6 +436,7 @@ scrui_min
 search_normal
 serverselectrow
 shine2
+simcity
 simcityglobal
 simcityworldlogo
 simcityworldpanel

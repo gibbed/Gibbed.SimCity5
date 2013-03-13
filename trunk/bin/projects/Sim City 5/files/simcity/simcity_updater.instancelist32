@@ -1,4 +1,4 @@
-; 397/952 (41%)
+; 403/952 (42%)
 achievementcategories
 achievementpopup
 achievements_panel
@@ -23,6 +23,7 @@ btndeletehl
 btndeletenorm
 button_budget_normal
 button_carousel_normal
+button_carousel_selected
 button_close_window_disabled
 button_close_window_disabled2
 button_close_window_highlight
@@ -139,6 +140,7 @@ close-button_tab
 cloud01
 cloud03
 cloud04
+configmanager
 contentunavailablemessage
 continuetab
 create_breadcrumbs01
@@ -163,6 +165,7 @@ ea_koreanagd_simcity-bold
 ea_mp_simcityru-regular
 ea_mp_simcityru-semibold
 eaorangelogosm
+editor
 editorstyles
 errorwindow
 fe-horizontalseparator
@@ -274,6 +277,7 @@ maxis_logo-sm
 messageenter_normal
 minimap_slot
 miniregioninfotile
+missingavatar
 mission-1shine
 mission-2shine
 mission-3shine
@@ -282,6 +286,8 @@ modaldialogs
 mygamessidebarwhosplayingavatar
 newsitem
 noeditoruiconfig
+optiongamecamera
+optionshowtutorials
 optionspanel
 originlogo-orange-40x30
 originlogo-white-40x30

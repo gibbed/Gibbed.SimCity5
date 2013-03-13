@@ -1,4 +1,4 @@
-; 16/9547 (0%)
+; 18/9547 (0%)
 base
 bus
 casino
@@ -10,7 +10,9 @@ garbage
 happiness
 heavyrail
 lightrail
+none
 power
+regionalboxuniqueid
 sewage
 templatebuilding
 waitingroom
