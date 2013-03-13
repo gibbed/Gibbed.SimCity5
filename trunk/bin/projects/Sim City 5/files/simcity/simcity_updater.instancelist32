@@ -1,4 +1,4 @@
-; 392/952 (41%)
+; 397/952 (41%)
 achievementcategories
 achievementpopup
 achievements_panel
@@ -24,6 +24,7 @@ btndeletenorm
 button_budget_normal
 button_carousel_normal
 button_close_window_disabled
+button_close_window_disabled2
 button_close_window_highlight
 button_close_window_highlight2
 button_close_window_normal
@@ -61,7 +62,9 @@ button_palette_roundedhalf_selected_lft
 button_palette_roundedhalf_selectedhigh_lft
 button_presence_dropdown_normal
 button_previous_disabled
+button_previous_highlight
 button_previous_normal
+button_previous_selected
 button_radio_normal
 button_radio_selected
 button_round_normal
@@ -85,6 +88,7 @@ button_standard_next_selected
 button_standard_short_highlighted
 button_standard_short_normal
 button_standard_short_selected
+button_standard_short_selectedhigh
 button_standard_smallround_disabled
 button_standard_smallround_normal
 button_tab_horizontal_blue
@@ -300,6 +304,7 @@ pledgebadgetaskcheckoff
 pledgebadgetaskcheckon
 pledgeiconbkgrnd
 pledgeportraitframe
+pledgeportraitframeover
 population_icon
 presencedropdownitem
 productentry

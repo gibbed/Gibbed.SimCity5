@@ -1,4 +1,4 @@
-; 45/174 (25%)
+; 46/174 (26%)
 agentquery
 alerts
 automatedregiontemplates
@@ -9,6 +9,7 @@ buildingrollover
 cheatconsole
 cityspecializationguide
 commonbuttons
+cursorattachments
 datalayerlegend
 dialogmessages
 errormessages
