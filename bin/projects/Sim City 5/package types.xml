@@ -1,0 +1,30 @@
+<types>
+  <type id="0x00B1B104" ext="prop"   />
+  <type id="0x02393756" ext="cur"    />
+  <type id="0x024A0E52" ext="txt"    />
+  <type id="0x02FAC0B6" ext="locale" />
+  <type id="0x03E421EC"              />
+  <type id="0x03E421ED"              />
+  <type id="0x03E421F0"              />
+  <type id="0x0469A3F7"              />
+  <type id="0x07B53899"              />
+  <type id="0x08068AEB"              />
+  <type id="0x08068AEC"              />
+  <type id="0x0A4D8D09"              />
+  <type id="0x0A98EAF0" ext="json"   />
+  <type id="0x0D9E5710"              />
+  <type id="0x12952634" ext="dat"    />
+  <type id="0x276CA4B9" ext="ttf"    />
+  <type id="0x2C978DB6" ext="css"    />
+  <type id="0x2E5A9763"              />
+  <type id="0x2F4E681B" ext="rw4"    />
+  <type id="0x2F4E681C" ext="raster" />
+  <type id="0x2F7D0004" ext="png"    />
+  <type id="0x2F7D0006" ext="tga"    />
+  <type id="0x2F7D0007" ext="gif"    />
+  <type id="0x376840D7" ext="vp6"    />
+  <type id="0x3F8662EA" ext="jpg"    />
+  <type id="0x67771F5C" ext="js"     />
+  <type id="0xDD6233D6" ext="html"   />
+  <type id="0xEA5118B0" ext="swb"    />
+</types>

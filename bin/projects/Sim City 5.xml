@@ -1,0 +1,34 @@
+<project>
+	<name>Sim City 5</name>
+	<dependencies>
+		<dependency>Shared</dependency>
+	</dependencies>
+	<list_location>Sim City 5</list_location>
+	<install_locations>
+		<install_location>
+			<action type="registryview" view="Registry32" hive="LocalMachine" subkey="SOFTWARE\Maxis\SimCity" value="Install Dir" />
+		</install_location>
+		<install_location>
+			<action type="registryview" view="Registry64" hive="LocalMachine" subkey="SOFTWARE\Maxis\SimCity" value="Install Dir" />
+		</install_location>
+		<install_location>
+			<action type="registryview" view="Registry32" hive="LocalMachine" subkey="SOFTWARE\Maxis\SimCity" value="GDFBinary" />
+			<action type="directory_name" />
+		</install_location>
+		<install_location>
+			<action type="registryview" view="Registry64" hive="LocalMachine" subkey="SOFTWARE\Maxis\SimCity" value="GDFBinary" />
+			<action type="directory_name" />
+		</install_location>
+		<install_location>
+			<action type="registryview" view="Registry64" hive="LocalMachine" subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\GameUX\Games\{14020D83-CB3F-477B-B47F-3CE06F06025E}" value="ConfigApplicationPath" />
+		</install_location>
+		<install_location>
+			<action type="registryview" view="Registry32" hive="LocalMachine" subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\GameUX\Games\{14020D83-CB3F-477B-B47F-3CE06F06025E}" value="AppExePath" />
+			<action type="directory_name" />
+		</install_location>
+		<install_location>
+			<action type="registryview" view="Registry64" hive="LocalMachine" subkey="SOFTWARE\Microsoft\Windows\CurrentVersion\GameUX\Games\{14020D83-CB3F-477B-B47F-3CE06F06025E}" value="AppExePath" />
+			<action type="directory_name" />
+		</install_location>
+	</install_locations>
+</project>
