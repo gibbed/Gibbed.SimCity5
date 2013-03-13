@@ -1,4 +1,4 @@
-; 526/1875 (28%)
+; 528/1875 (28%)
 03_green_challenge_large_gamescom
 03_green_challenge_small_gamescom
 07_population_explosion_large
@@ -191,6 +191,7 @@ ea_mp_simcityru-regular
 ea_mp_simcityru-semibold
 eaorangelogosm
 editor
+editorconfig
 editorstyles
 errorwindow
 fe-horizontalseparator
@@ -355,6 +356,7 @@ mappopup_occupiedcity
 mappopup_unownedcity
 mappopup-pointer
 mapstats-icon-population
+maxis_intro
 maxis_logo
 maxis_logo-sm
 messageenter_normal
