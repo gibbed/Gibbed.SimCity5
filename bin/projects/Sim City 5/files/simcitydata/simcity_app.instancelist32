@@ -1,4 +1,5 @@
-; 516/1875 (27%)
+; 526/1875 (28%)
+03_green_challenge_large_gamescom
 03_green_challenge_small_gamescom
 07_population_explosion_large
 07_population_explosion_small
@@ -26,6 +27,7 @@ billboard-placeholder
 bkg-challenge-coal
 browse_tile_play
 browsesellsheet_littlegorge
+browsesellsheet_reflection
 btndeletehl
 btndeletenorm
 button_budget_normal
@@ -50,7 +52,9 @@ button_next_disabled
 button_next_highlight
 button_next_normal
 button_next_selected
+button_palette_long_highlighted
 button_palette_long_normal
+button_palette_long_selected
 button_palette_rounded_disabled_launcher
 button_palette_rounded_highlighted
 button_palette_rounded_highlighted_sm
@@ -109,6 +113,7 @@ button-launcher-restart
 button-launcher-retry
 buttonnineslicestyles
 buttonstyles
+canvastestpage
 capetrinity_1026_zoom
 capetrinity_1027_zoom
 capetrinity_1028_zoom
@@ -133,8 +138,10 @@ checkboxdisabled
 checkboxenabled
 citylog-icon-citylog
 citylog-icon-citylog-white
+citylog-listentry
 citylog-panel
 citylog-popup
+citylog-userentry
 cityresources-icon-coal
 cityresources-icon-oil
 cityresources-icon-ore
@@ -187,6 +194,7 @@ editor
 editorstyles
 errorwindow
 fe-horizontalseparator
+fonttest
 friendlistcategory
 friendlistfooter
 friendlistheader
@@ -270,6 +278,7 @@ joingame_filterbyfriends
 joingame_filterbyfriends_button
 joingame_filterbymaps
 jointab
+launcher3d_planar
 leaderboard-button
 leaderboardcityentry
 leaderboardcontent
@@ -507,6 +516,7 @@ ui_wantsfears_tb_happy5_stretch-r
 ui_wantsfears_tb_happy5_stretch-t
 ui_wantsfears_tb_happy5_stretch-tl
 ui_wantsfears_tb_happy5_stretch-tr
+updater
 updater_min
 updaterpanel
 vignette
