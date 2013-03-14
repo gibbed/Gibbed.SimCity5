@@ -1,0 +1,64 @@
+-f
+Run game in fullscreen mode.
+
+-nomute
+Prevents muting of audio when the game is not focused.
+
+-noMP
+Disables setting of process affinity mask.
+
+-state:<value>
+Set initial game state, ie try -state:SimCity.
+
+-w
+Run game in windowed mode.
+
+-autoUpdateApp
+-autoUpdateData
+-dataDir:<value>
+-demo
+-devDirs
+-display:<value>
+-downloadAddOns
+-excludeRuleNames
+-flock
+-includeRuleNames
+-installDataTo:<value>
+-installTo:<value>
+-jobPriority:<value>
+-jobThreads:<value>
+-loadBox:<value>
+-mce
+-noBackground
+-noDemo
+-noDevEffects
+-noEffectScripts
+-noMaterialScripts
+-noPlugins
+-noPropDescriptions
+-noRestart
+-noRoadZ
+-noScripts
+-noServer
+-noSound
+-noUIConsole
+-noUpdates
+-noVSync
+-preload
+-quitOnUpdateDone
+-r:<value>
+-recovery
+-reinstall
+-safe
+-shipDirs
+-showConfigAlerts
+-spore
+-timed:<value>
+-updaterProdMode:<value>
+-upgrading
+-userDataDir:<value>
+-userID:<value>
+-version
+-vSync
+-wp:<value>
+-writeableData
