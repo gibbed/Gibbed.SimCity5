@@ -1,4 +1,4 @@
-; 2982/12081 (24%)
+; 2983/12081 (24%)
 abandonedalert
 achievementslayout
 advisor_female_bigbiz_metals
@@ -2558,6 +2558,7 @@ sc_politician_male_002_small
 sc_resident_01_003_small
 sc_sanitation_worker_female_004_small
 sc_sanitation_worker_male_004_small
+scglobalui
 school
 schoolbusr2
 schoolbusstop
