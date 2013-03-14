@@ -126,6 +126,7 @@ namespace RebuildInstanceLists32
                 "SimCity",
                 "SimCityData",
                 Path.Combine("SimCityUserData", "EcoGame"),
+                Path.Combine("SimCityUserData", "Patches"),
             };
 
             var inputPaths = new List<string>();
