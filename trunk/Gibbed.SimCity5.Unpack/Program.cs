@@ -180,7 +180,15 @@ namespace Gibbed.SimCity5.Unpack
                                 }
 
                                 isUnknown = true;
-                                entryName = "#" + entry.Key.InstanceId.ToString("X16", CultureInfo.InvariantCulture);
+
+                                if ((entry.Key.InstanceId & 0xFFFFFFFF00000000ul) == 0)
+                                {
+                                    entryName = "#" + entry.Key.InstanceId.ToString("X8", CultureInfo.InvariantCulture);
+                                }
+                                else
+                                {
+                                    entryName = "#" + entry.Key.InstanceId.ToString("X16", CultureInfo.InvariantCulture);
+                                }
                             }
 
                             if (typeInfo != null &&
