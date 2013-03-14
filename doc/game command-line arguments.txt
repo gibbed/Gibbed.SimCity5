@@ -1,17 +1,53 @@
 -f
-Run game in fullscreen mode.
+
+  Run game in fullscreen mode.
+
+
+-jobPriority:<value>
+
+  Job thread priority. Only used if -noBackground is not specified.
+
+
+-jobThreads:<value>
+
+  Number of job threads. Only used if -noBackground is not specified.
+  When not specified, default value is number of processors minus one.
+  Maximum specifiable value is 20.
+
+
+-noBackground
+
+  Disables background threads.
+
 
 -nomute
-Prevents muting of audio when the game is not focused.
+
+  Prevents muting of audio when the game is not focused.
+
 
 -noMP
-Disables setting of process affinity mask.
+
+  Disables setting of process affinity mask.
+
+
+-noVSync
+
+  Disables vsync.
+
 
 -state:<value>
-Set initial game state, ie try -state:SimCity.
+
+  Set initial game state, ie try -state:SimCity.
+
+
+-vSync
+
+  Enables vsync.
 
 -w
-Run game in windowed mode.
+
+  Run game in windowed mode.
+
 
 -autoUpdateApp
 -autoUpdateData
@@ -25,11 +61,8 @@ Run game in windowed mode.
 -includeRuleNames
 -installDataTo:<value>
 -installTo:<value>
--jobPriority:<value>
--jobThreads:<value>
 -loadBox:<value>
 -mce
--noBackground
 -noDemo
 -noDevEffects
 -noEffectScripts
@@ -43,7 +76,6 @@ Run game in windowed mode.
 -noSound
 -noUIConsole
 -noUpdates
--noVSync
 -preload
 -quitOnUpdateDone
 -r:<value>
@@ -59,6 +91,5 @@ Run game in windowed mode.
 -userDataDir:<value>
 -userID:<value>
 -version
--vSync
 -wp:<value>
 -writeableData
