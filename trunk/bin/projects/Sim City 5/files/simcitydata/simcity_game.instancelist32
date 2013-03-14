@@ -1,4 +1,4 @@
-; 2692/12081 (22%)
+; 2763/12081 (22%)
 abandonedalert
 achievementslayout
 advisor_female_regional
@@ -17,6 +17,8 @@ alerttemplatenocount
 alerttemplatenocountcirclebar
 alerttemplatespeech
 alldatalayerpanel
+alloy
+ambulance
 arrow-down
 arrow-up
 articlerollover
@@ -32,6 +34,7 @@ avatartemplate
 avenue
 bakery
 bankruptdialog
+bedrock
 bg-side
 billboardicon
 bkg-rank-info
@@ -42,12 +45,14 @@ bordermycity
 borderoffline
 borderonline
 boundaryuiavatar
+bracket
 breakingnews-bkgrnd
 breakingnewsearthquake
 breakingnewsmeteor
 breakingnewsplague
 breakingnewstornado
 bridgeproject
+brushes
 btn_avatarpick_down
 btn_avatarpick_highlt
 btn_avatarpick_selected
@@ -356,6 +361,7 @@ bus
 busalert
 buscity
 busstop
+button
 button_clear_style2
 button_clear_style7
 button_zoomin_high
@@ -522,6 +528,7 @@ compass_arrow_r
 compass_arrow_r_hl
 compass_rose
 compass_rose2
+computer
 connectionhoverpanel
 construction_stripes
 contextinfobg_civic
@@ -544,6 +551,7 @@ cratefactory
 crime
 crimealert
 crime-risk
+criminal
 cultural
 cursor-atchmnt-bkgrnd
 cursor-atchmnt-bkgrnd-l
@@ -606,6 +614,7 @@ datavis_water_gauge_needle
 datavis_water_metercaps
 datavis_water_metermask_grey_top
 debug
+default
 demolish
 densityhappinessmeter
 destruction
@@ -627,6 +636,7 @@ dialogunlock
 dialogwhitedots
 dialogwhiteframe
 disasterplop
+disasters
 dl_air_pollution_bldns
 dl_crime_apprehended
 dl_crime_arson
@@ -674,12 +684,14 @@ dl_zone_r_buildings
 dlcdialog
 dots
 dotwhite
+driveway
 dropdownitem
 dropdownpanel
 edgeblur
 edgeblurhrz
 editsnappoints
 editunitprop
+education
 education_college_base
 education_college_wing
 education_elementary_base
@@ -704,17 +716,23 @@ education_university_wing_medicine
 education_university_wing_science
 educationalert
 educatione2
+electric
 electronics
 empty
 empty_field
+environment
 errormodal
 eventdialogfadelft
 eventdialogfadergt
 eventdialoglft
 eventdialogmid
 eventdialogrgt
+excitement
+explosive
 export
 farm
+fence
+ferry
 fire
 fire_t2_base
 fire_t2_base_locked
@@ -732,6 +750,7 @@ firedispatchtower
 fire-fire_past-events
 fire-fire_risk
 fire-icon
+firelight
 firemarshaldispatchplop
 firestation
 firestation_sign_roof
@@ -742,11 +761,14 @@ firestationtier2
 firetier2reward
 firetruck
 flatbedtruck
+foam
+forest
 forest_painter
 fpo-progress1
 fpo-progress2
 fpo-progress3
 frame_style_green
+fuel
 fullresourcesalert
 game-speed_white
 garbage
@@ -756,6 +778,7 @@ garbageaddcheat
 garbagealert
 garbagedispatchplop
 garbageincinerator
+garbageman
 garbagepainter
 garbageremovecheat
 garbagetruck
@@ -765,7 +788,9 @@ genericbush
 genericcost
 genericplop
 genericroad
+germs
 glass_button_style3
+global
 globalstatsbg
 globalstatsbg2
 globalui2
@@ -804,12 +829,14 @@ government_mayorhouse_theater
 government_mayorhouse_tower
 government_mayorhouse_wingleft
 government_mayorhouse_wingright
+govt
 gpmm_coal_v2
 gpmm_pollution_v6
 gradient-lft
 gradient-rgt
 graphsign
 graph-sign
+grass
 greatworkintroduction
 greatworks_arcology
 greatworks_intairport
@@ -820,6 +847,7 @@ greatworkscompletion_benefiticon
 greatworksoption
 greatworksprerequisite
 green-world
+ground
 guide
 guidemedialog
 gw_operatingalert
@@ -870,9 +898,11 @@ healthalert
 heavyrail
 heavyrailalert
 highschool
+homeless
 homelessalert
 hospital
 hotel
+hotels
 hud_alert_background
 hud_bkgrnd_alerttab
 hud_bkgrnd_alerttab2
@@ -1823,12 +1853,16 @@ icon-shopping
 icon-world
 imagecapturefeedback
 imex
+import
 industrialroad
 industrialzone
 info_mission_bkgrnd
 infobutton
+injured
+injury
 injuryalert
 injurybug
+jail
 killbug
 landvaluemeter
 launchsatellitebutton
@@ -1844,6 +1878,7 @@ lock-progress-frame
 loggingcamp
 loggingtruck
 lumbermill
+magma
 main_button_tab_lft
 main_button_tab_lft_straight
 main_button_tab_mid
@@ -1854,12 +1889,15 @@ mayorratingbigbuttonmeter
 mayorratinginforolloveritem
 mayorratinglittlebuttonmeter
 mayorratingpanel
+measurer
+medical
 mediumcityicon
 mediumcityicon-hover
 menubgleftcap
 menulgtilewithdot
 menurightcap
 menusmtilenodot
+metal
 metertrendarrowdown
 metertrendarrowup
 middionconnection
@@ -1887,10 +1925,12 @@ module_grouping_more_rgt
 module_grouping_rgt
 module_unlock_counter
 money-banner
+moon
 movetool
 navbutton07
 needresourcesalert
 negativethoughtballoonbuttontemplate
+networks
 new
 newsarticle
 newsinterupt
@@ -1900,6 +1940,7 @@ newstyle
 newstylebutton
 newsunlock
 newswirecardminishadow
+nowhere
 nuclearpowermediumgeneratormodule
 oil
 oil_map
@@ -1907,6 +1948,7 @@ oilalert
 oilreservoirpainter
 one_x_two_multi_background
 openingscreen
+ore
 ore_map
 orealert
 oredepositpainter
@@ -2001,11 +2043,17 @@ palette-tool-select-norm
 pallete-carrot
 pallete-carrot-tutorial
 paperclip1
+paramedics
+park
 park_mediumgreenpark
 pausering
+pickup
+pipeline
 placeholder_palette_image
+plastic
 playeroffline_icon
 pointercontainer
+police
 police_map
 policecruiser
 policedetectivewing
@@ -2079,12 +2127,14 @@ progressitemicon
 progressredtogreen_push
 progress-tab-bg
 promptbar01
+protest
 puck-base
 puck-layer
 puck-region-base
 puck-region-layer
 r_ldmw_01
 r_ldmw_parkinglot_01
+radiation
 radiobox-act
 radiobox-hl
 radiobox-norm
@@ -2108,7 +2158,9 @@ rci_unzone_rollover
 rcizonealert
 rec_cornerframe
 rec-dot
+recycling
 recyclingalert
+region
 region_city_marker
 region_city_marker_snap
 region_cityabandoned
@@ -2321,6 +2373,7 @@ sample-4-state-button
 sample-8-state-button
 sc_air_traffic_controller_male_001_small
 sc_resident_01_003_small
+school
 scroll_button_bottom
 scroll_button_left
 scroll_button_right
@@ -2354,6 +2407,8 @@ shadow-hrz
 shadow-vrt
 shrubshort
 shrubtall
+sick
+sickness
 sicknessbug
 simcityui_min
 simnation_enter_city_marker
@@ -2371,6 +2426,7 @@ smelting_t1_garage
 smelting_t1_oreinputlot
 smelting_t1_outputlot
 smelting_t1_smeltingfactory
+soil
 soil_painter
 solarpower_advancedpanel
 solarpower_basestation
@@ -2395,7 +2451,12 @@ speedpanel
 spinnerstrip
 stadium
 steelmill
+storage
+student
 studentaddcheat
+students
+survey
+swoop
 swwire-cover-holder
 system_info_education_edu
 system_info_education_tech
@@ -2413,6 +2474,7 @@ taxescomplex2
 taxesintermediate2
 taxspinner
 techlevelmeter2
+television
 templatebuilding
 temproadmap
 test-toggle-button
@@ -2452,6 +2514,7 @@ tool_lock_icon2
 toolprogressbar
 toolunlockeffect
 topnavuncut04
+tornado
 tornado_background-ground
 tornado_backgroundsky
 tornado_cloud-front
@@ -2467,6 +2530,7 @@ tornado_light-rays
 tornado_tornado
 tornado_wind1
 tornado_wind2
+tourism
 tourists
 toy-badge-placeholder
 toytaskpanel
@@ -2510,8 +2574,10 @@ tradewall_icon_water
 tradewall_icon_water_export
 tradewall_icon_water_import
 tradingtruckstp
+traffic
 trafficpainter
 transformer
+transport
 transport_trucktransferstation
 transportation
 treepine
@@ -2524,6 +2590,7 @@ trendup
 tutorial_female
 tutorial_female_small
 tutorialdialognextbuttonyellow
+ufo
 ui_arrow_flat
 ui_demand_rcibg
 ui_layer_tab_addbldg_hilt
@@ -2637,6 +2704,7 @@ utilitytradeitem
 utilitytradeui
 vandalismpainter
 vehicle
+vehicles
 videorecframe
 water
 water_pumphouse
@@ -2657,6 +2725,7 @@ widgetframe2
 win-b
 win-b-lft
 win-b-rgt
+wind
 windmill
 windmill_advanced
 window
@@ -2681,6 +2750,8 @@ wirecover
 workeraddcheat
 workeralert
 xsign
+zeros
+zombie
 zone_brush_c
 zone_brush_coalstripmine
 zone_brush_g

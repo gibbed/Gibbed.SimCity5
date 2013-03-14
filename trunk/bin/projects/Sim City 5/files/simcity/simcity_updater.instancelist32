@@ -1,4 +1,4 @@
-; 604/952 (63%)
+; 608/952 (63%)
 achievementcategories
 achievementpopup
 achievements_frame
@@ -19,6 +19,7 @@ avatarframe
 avatarframeoff
 avatarframeon
 banner_screen
+bar
 bg-launcher
 bg-launcher_overlay
 billboard
@@ -413,6 +414,7 @@ panel-regionbase
 panel-regionbox
 panel-regionbox-foreign
 panel-regiontitle
+person
 photo-alternate1placeholder
 photo-alternate2placeholder
 photo-alternate3placeholder
@@ -460,6 +462,7 @@ profilegamestab
 profilepanel
 progress_bg
 progress-bar
+quit
 rank-01
 rank-02
 rank-03
@@ -492,6 +495,7 @@ shader
 shadet
 shadetl
 shadetr
+shine
 shine2
 sidefadel
 sidefader

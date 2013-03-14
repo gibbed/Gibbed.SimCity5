@@ -1,4 +1,4 @@
-; 722/1875 (38%)
+; 737/1875 (39%)
 03_green_challenge_large_gamescom
 03_green_challenge_small_gamescom
 07_population_explosion_large
@@ -24,7 +24,9 @@ avatar_tiny
 avatarframe
 avatarframeoff
 avatarframeon
+axes
 banner_screen
+bar
 base
 bg-launcher
 bg-launcher_overlay
@@ -32,6 +34,7 @@ billboard
 billboard-placeholder
 bkg-challenge-coal
 bkg-side
+black
 blank
 blue_gradient_horiz
 browse_tile_play
@@ -240,6 +243,7 @@ debuggridbg
 demo
 disaster
 dots1
+drag
 ea_ag_simcitystd-bk
 ea_ag_simcitystd-demi
 ea_arh2_simcity
@@ -256,6 +260,7 @@ editorconfig
 editorstyles
 errorwindow
 eventinviteitem
+example
 fe-horizontalseparator
 fonttest
 friendlistcategory
@@ -474,6 +479,7 @@ navbarbasenotab
 navbkgrndlft
 navbkgrndmid
 navbkgrndrgt
+neutral
 newsitem
 noeditoruiconfig
 optiongamecamera
@@ -491,6 +497,7 @@ panel-regionbase
 panel-regionbox
 panel-regionbox-foreign
 panel-regiontitle
+person
 photo-alternate1placeholder
 photo-alternate2placeholder
 photo-alternate3placeholder
@@ -538,6 +545,8 @@ profilegamestab
 profilepanel
 progress_bg
 progress-bar
+proto
+quit
 rank-01
 rank-02
 rank-03
@@ -596,10 +605,13 @@ shader
 shadet
 shadetl
 shadetr
+shine
 shine2
+sick
 sidefadel
 sidefader
 sillylogo
+sim
 simcity
 simcityglobal
 simcityworldlogo
@@ -620,6 +632,7 @@ tabbracketr
 tabsmallnorm
 tabsmallon
 tabsmallover
+test
 test2
 textinputstyles
 textlistitembkgrnd
@@ -643,6 +656,7 @@ topnavrdrk
 toppagefade
 transitionspeech
 transparent
+tree
 twincities_1026_zoom
 twincities_1027_zoom
 twincities_isometricmap
@@ -721,3 +735,4 @@ widgetmessage
 widgetnewgame
 windownineslicestyles
 windowstyles
+yes
