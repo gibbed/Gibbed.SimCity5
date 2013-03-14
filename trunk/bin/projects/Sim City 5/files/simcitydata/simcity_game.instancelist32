@@ -1,4 +1,4 @@
-; 2764/12081 (22%)
+; 2795/12081 (23%)
 abandonedalert
 achievementslayout
 advisor_female_regional
@@ -410,6 +410,7 @@ cat-btn-layers
 cat-btn-trade
 category_bulldoze_tab
 category_tab
+categorybuttondebug
 categorybuttonwithicon2
 cat-palette-bkgrnd
 cat-palette-bkgrnd-light
@@ -553,6 +554,9 @@ crimealert
 crime-risk
 criminal
 cultural
+cur-attach-wind-bkgrnd
+cur-attach-wind-dial
+cur-attach-wind-pointer
 cursor-atchmnt-bkgrnd
 cursor-atchmnt-bkgrnd-l
 cursor-atchmnt-bkgrnd-m
@@ -788,6 +792,7 @@ genericbush
 genericcost
 genericplop
 genericroad
+genericroadtool
 germs
 glass_button_style3
 global
@@ -1136,6 +1141,7 @@ icn_alert_edu_nopower_64x64
 icn_alert_edu_noworkers_64x64
 icn_alert_fire_explosive_64x64
 icn_alert_fire_fireinprogress_64x64
+icn_alert_fire_hazmat
 icn_alert_fire_nopower_64x64
 icn_alert_fire_nowater_64x64
 icn_alert_fire_toxic_64x64
@@ -1164,6 +1170,9 @@ icn_alert_power_nowind_64x64
 icn_alert_rci_abandoned
 icn_alert_rci_rubble
 icn_alert_roads_trafficjam_64x64
+icn_alert_warning_fires
+icn_alert_warning_garbage
+icn_alert_warning_sewage
 icn_alert_white
 icn_alert_zones_nofreightdestination_64x64
 icn_alert_zones_noprofitability_64x64
@@ -1172,11 +1181,13 @@ icn_alert_zones_noworkers_64x64
 icn_alert-criminal
 icn_alert-fires
 icn_alert-garbage
+icn_alert-health_sick
 icn_alert-low-ore
 icn_alert-no-alloy
 icn_alert-no-coal
 icn_alert-no-oil
 icn_alert-no-power
+icn_alert-not-connected
 icn_alert-no-water
 icn_alert-sick
 icn_arcologymeter_lowpopulation
@@ -1395,6 +1406,7 @@ icn_pledge_demo_req_freighttrain
 icn_pledge_demo_req_heavycom
 icn_pledge_demo_req_passengertrain
 icn_police
+icn_police__blueblack
 icn_police_red
 icn_police_yellow
 icn_power
@@ -1427,6 +1439,7 @@ icn_roads_red
 icn_roads_white
 icn_roads_yellow
 icn_rollover_construction
+icn_rollover_police_apprehended
 icn_rollover_powerconsumption
 icn_rollover_powerproduction
 icn_rollover_residents
@@ -1763,6 +1776,7 @@ icn-trade-greatworks_white
 icn-trade-health
 icn-trade-health_red
 icn-trade-health_white
+icn-trade-import
 icn-trade-iron
 icn-trade-ironore
 icn-trade-logs
@@ -1835,6 +1849,7 @@ icn-zoning-r-off
 icn-zoning-r-select
 icn-zoning-r-up-norm
 icn-zoning-r-up-select
+ico_alert_injury
 ico_alert_warning_resources
 icoalertpower
 icoalertspeechballoon
@@ -2272,6 +2287,7 @@ reportcontent
 reportcontenttype
 residential_female_04_small
 residential_female_06_small
+residential_male_08_small
 residential_road
 residentialzone
 resource-crates
@@ -2353,13 +2369,16 @@ rolloveritemiconmeterandtext
 rolloveritemiconvalue
 rolloveritemlongtext
 rolloveritemmetertextandtitle
+rolloveritemmulticolormeterandtext
 rolloveritemneutralcolormeterandtext
 rolloveritemnormaltextcenter
 rolloveritemnormaltextcenter2row
 rolloveritemsmalltextcenter
+rolloveritemsmalltextcenter2row
 rolloveritemtaxes
 rolloveritemtextrightsmall
 rollovermeterframe
+rolloverresourceglobalmarketdelivery
 rolloverresourcestoragedelivery
 rollovertextframefull
 rollovertextframelft
@@ -2367,12 +2386,23 @@ rollovertextframergt
 rollover-toy
 rollover-toy2
 rollovertoytask
+rollovertoytasknoimage
 rolloverwealthlegend
 rubblealert
 sample-4-state-button
 sample-8-state-button
 sc_air_traffic_controller_male_001_small
+sc_business_person_male_001_small
+sc_fire_female_001_small
+sc_fire_male_001_small
+sc_health_female_002_small
+sc_police_officer_female_001_small
+sc_police_officer_male_005_small
+sc_politician_female_005_small
+sc_politician_male_002_small
 sc_resident_01_003_small
+sc_sanitation_worker_female_004_small
+sc_sanitation_worker_male_004_small
 school
 scroll_button_bottom
 scroll_button_left
@@ -2727,6 +2757,7 @@ win-b
 win-b-lft
 win-b-rgt
 wind
+winddirection
 windmill
 windmill_advanced
 window

@@ -1,4 +1,4 @@
-; 737/1875 (39%)
+; 745/1875 (39%)
 03_green_challenge_large_gamescom
 03_green_challenge_small_gamescom
 07_population_explosion_large
@@ -40,6 +40,7 @@ blue_gradient_horiz
 browse_tile_play
 browseredgefadel
 browseredgefader
+browsesellsheet_gallia
 browsesellsheet_littlegorge
 browsesellsheet_reflection
 btmpageblue
@@ -82,7 +83,9 @@ btnplayercount_down
 btnplayercount_dsbl
 btnplayercount_over
 btnplaylgovr
+button_budget_high
 button_budget_normal
+button_budget_selected
 button_carousel_normal
 button_carousel_selected
 button_close_window_disabled
@@ -117,6 +120,8 @@ button_palette_rounded_selected_sm
 button_palette_rounded_selectedhigh
 button_palette_rounded_selectedhigh_sm
 button_palette_rounded_surround
+button_palette_roundedhalf_disabled
+button_palette_roundedhalf_disabled_lft
 button_palette_roundedhalf_highlighted
 button_palette_roundedhalf_highlighted_lft
 button_palette_roundedhalf_normal
@@ -203,6 +208,7 @@ citylog-userentry
 cityresources-icon-coal
 cityresources-icon-oil
 cityresources-icon-ore
+cityresources-icon-rail-off
 cityresources-icon-rail-on
 cityresources-icon-ship-off
 cityresources-icon-ship-on
@@ -271,6 +277,7 @@ friendslist-addfriendbuttonup
 friendslist-button-originigo-off
 friendslist-chatbuttonup
 friendslistitem
+friendslist-messageitem
 friendslist-nofriends
 friendspanel_triangle
 friendspanel_triangle_down
@@ -294,6 +301,7 @@ gallia_1039_zoom
 gallia_1040_zoom
 gallia_1041_zoom
 gallia_isometricmap
+gallia_loadingbackdrop
 gamebrowsersmall
 gameconfig
 gameentryui_min
