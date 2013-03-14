@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebuildInstanceLists32", "R
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Other", "Other", "{94F371BE-961F-415E-A477-735296D16EC2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gibbed.SimCity5.Pack", "Gibbed.SimCity5.Pack\Gibbed.SimCity5.Pack.csproj", "{3219F1C2-F8F8-4769-BED1-F762B34810FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -109,6 +111,16 @@ Global
 		{C8B51984-5262-43C8-87AA-5055E4B351D2}.Release|Mixed Platforms.Build.0 = Release|x86
 		{C8B51984-5262-43C8-87AA-5055E4B351D2}.Release|x86.ActiveCfg = Release|x86
 		{C8B51984-5262-43C8-87AA-5055E4B351D2}.Release|x86.Build.0 = Release|x86
+		{3219F1C2-F8F8-4769-BED1-F762B34810FF}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{3219F1C2-F8F8-4769-BED1-F762B34810FF}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{3219F1C2-F8F8-4769-BED1-F762B34810FF}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{3219F1C2-F8F8-4769-BED1-F762B34810FF}.Debug|x86.ActiveCfg = Debug|x86
+		{3219F1C2-F8F8-4769-BED1-F762B34810FF}.Debug|x86.Build.0 = Debug|x86
+		{3219F1C2-F8F8-4769-BED1-F762B34810FF}.Release|Any CPU.ActiveCfg = Release|x86
+		{3219F1C2-F8F8-4769-BED1-F762B34810FF}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{3219F1C2-F8F8-4769-BED1-F762B34810FF}.Release|Mixed Platforms.Build.0 = Release|x86
+		{3219F1C2-F8F8-4769-BED1-F762B34810FF}.Release|x86.ActiveCfg = Release|x86
+		{3219F1C2-F8F8-4769-BED1-F762B34810FF}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
