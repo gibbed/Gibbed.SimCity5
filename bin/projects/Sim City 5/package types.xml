@@ -6,7 +6,7 @@
   <type id="0x03E421EC"              />
   <type id="0x03E421ED"              />
   <type id="0x03E421F0"              />
-  <type id="0x0469A3F7"              />
+  <type id="0x0469A3F7" ext="shader" />
   <type id="0x07B53899"              />
   <type id="0x08068AEB"              />
   <type id="0x08068AEC"              />
