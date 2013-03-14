@@ -1,4 +1,6 @@
-; 42/5819 (0%)
+; 61/5819 (1%)
+activebuilding
+alerthelpwanted
 ball
 basketball
 black
@@ -10,6 +12,7 @@ confetti
 databindingstutorialdensity
 databindingstutoriallandvalue
 density
+desirability_r
 educatione2
 evacuation
 flames
@@ -20,24 +23,40 @@ gear
 gray
 halogen
 happiness
+happinesstoken
 heavyrail
 homeless
+hotitemsw1
+hotitemsw2
+hotitemsw3
 industrial
 kid
 kill
 landmark
 lightbulb
 lightrail
+moneytoken
 movers
+parkkid
 pool
 population
 profit
+profittoken
 residential
 sadness
 shoppers
+shopperw1
+shopperw2
+shopperw3
 soccer
+souvenirsw1
+souvenirsw2
+souvenirsw3
 sparks
 token
+totalresidents
+totalshoppers
+totalworkers
 waves
 white
 zones
