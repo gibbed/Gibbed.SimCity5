@@ -26,6 +26,7 @@ using System.Globalization;
 using System.IO;
 using System.Xml.XPath;
 using Gibbed.IO;
+using Gibbed.RefPack;
 using Gibbed.SimCity5.FileFormats;
 using NDesk.Options;
 
@@ -36,9 +37,13 @@ namespace Gibbed.SimCity5.Pack
         public static void Main(string[] args)
         {
             bool showHelp = false;
+            bool verbose = false;
+            bool shouldCompress = false;
 
             var options = new OptionSet()
             {
+                { "c|compress", "enable compression", v => shouldCompress = v != null },
+                { "v|verbose", "be verbose", v => verbose = v != null },
                 { "h|help", "show this message and exit", v => showHelp = v != null },
             };
 
@@ -88,6 +93,11 @@ namespace Gibbed.SimCity5.Pack
             var nodes = navigator.Select("/files/file");
 
             var filePaths = new Dictionary<ResourceKey, string>();
+
+            if (verbose == true)
+            {
+                Console.WriteLine("Discovering files...");
+            }
 
             while (nodes.MoveNext())
             {
@@ -139,6 +149,11 @@ namespace Gibbed.SimCity5.Pack
                 filePaths.Add(key, inputPath);
             }
 
+            if (verbose == true)
+            {
+                Console.WriteLine("Writing files...");
+            }
+
             using (var output = File.Create(outputPath))
             {
                 var dbpf = new DatabasePackedFile
@@ -153,18 +168,65 @@ namespace Gibbed.SimCity5.Pack
                     var key = kv.Key;
                     var filePath = kv.Value;
 
+                    if (verbose == true)
+                    {
+                        Console.WriteLine("{0}", filePath);
+                    }
+
                     using (var input = File.OpenRead(filePath))
                     {
-                        dbpf.Entries.Add(new DatabasePackedFile.Entry
+                        if (shouldCompress == false)
                         {
-                            Key = key,
-                            CompressedSize = (uint)input.Length | 0x80000000,
-                            UncompressedSize = (uint)input.Length,
-                            CompressionFlags = 0,
-                            Flags = 1,
-                            Offset = output.Position
-                        });
-                        output.WriteFromStream(input, (uint)input.Length);
+                            long offset = output.Position;
+                            output.WriteFromStream(input, (uint)input.Length);
+
+                            dbpf.Entries.Add(new DatabasePackedFile.Entry
+                            {
+                                Key = key,
+                                CompressedSize = (uint)input.Length | 0x80000000,
+                                UncompressedSize = (uint)input.Length,
+                                CompressionFlags = 0,
+                                Flags = 1,
+                                Offset = offset,
+                            });
+                        }
+                        else
+                        {
+                            byte[] compressed;
+                            var success = input.RefPackCompress((int)input.Length, out compressed);
+
+                            if (success == true)
+                            {
+                                long offset = output.Position;
+                                output.WriteBytes(compressed);
+
+                                dbpf.Entries.Add(new DatabasePackedFile.Entry
+                                {
+                                    Key = key,
+                                    CompressedSize = (uint)(compressed.Length) | 0x80000000,
+                                    UncompressedSize = (uint)input.Length,
+                                    CompressionFlags = -1,
+                                    Flags = 1,
+                                    Offset = offset,
+                                });
+                            }
+                            else
+                            {
+                                input.Position = 0;
+                                long offset = output.Position;
+                                output.WriteFromStream(input, (uint)input.Length);
+
+                                dbpf.Entries.Add(new DatabasePackedFile.Entry
+                                {
+                                    Key = key,
+                                    CompressedSize = (uint)input.Length | 0x80000000,
+                                    UncompressedSize = (uint)input.Length,
+                                    CompressionFlags = 0,
+                                    Flags = 1,
+                                    Offset = offset,
+                                });
+                            }
+                        }
                     }
                 }
 
