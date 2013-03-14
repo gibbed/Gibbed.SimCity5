@@ -83,6 +83,9 @@ namespace Gibbed.SimCity5.Unpack
             string inputPath = extras[0];
             string outputPath = extras.Count > 1 ? extras[1] : Path.ChangeExtension(inputPath, null) + "_unpack";
 
+            inputPath = Path.GetFullPath(inputPath);
+            outputPath = Path.GetFullPath(outputPath);
+
             Regex filter = null;
             if (string.IsNullOrEmpty(filterPattern) == false)
             {
@@ -221,7 +224,7 @@ namespace Gibbed.SimCity5.Unpack
                                                      entry.Key.InstanceId.ToString("X16", CultureInfo.InvariantCulture));
                             xml.WriteAttributeString("type",
                                                      entry.Key.TypeId.ToString("X8", CultureInfo.InvariantCulture));
-                            xml.WriteValue(RelativePathTo(xmlPath, entryPath));
+                            xml.WriteValue(GetRelativePathForFiles(xmlPath, entryPath));
                             xml.WriteEndElement();
 
                             if (overwriteFiles == false &&
@@ -271,7 +274,16 @@ namespace Gibbed.SimCity5.Unpack
             }
         }
 
-        private static string RelativePathTo(string fromPath, string toPath)
+        private static string GetRelativePathForFiles(string fromPath, string toPath)
+        {
+            var toName = Path.GetFileName(toPath);
+            fromPath = Path.GetDirectoryName(fromPath);
+            toPath = Path.GetDirectoryName(toPath);
+            var relativePath = GetRelativePath(fromPath, toPath);
+            return Path.Combine(relativePath, toName);
+        }
+
+        private static string GetRelativePath(string fromPath, string toPath)
         {
             if (fromPath == null)
             {
@@ -283,17 +295,20 @@ namespace Gibbed.SimCity5.Unpack
                 throw new ArgumentNullException("toPath");
             }
 
-            if (Path.IsPathRooted(fromPath) == true && Path.IsPathRooted(toPath) == true)
+            if (Path.IsPathRooted(fromPath) == true &&
+                Path.IsPathRooted(toPath) == true)
             {
-                if (string.Compare(Path.GetPathRoot(fromPath), Path.GetPathRoot(toPath), StringComparison.OrdinalIgnoreCase) != 0)
+                if (string.Compare(Path.GetPathRoot(fromPath),
+                                   Path.GetPathRoot(toPath),
+                                   StringComparison.OrdinalIgnoreCase) != 0)
                 {
                     return toPath;
                 }
             }
 
             var relativePath = new List<string>();
-            string[] fromDirectories = fromPath.Split(Path.DirectorySeparatorChar);
-            string[] toDirectories = toPath.Split(Path.DirectorySeparatorChar);
+            var fromDirectories = fromPath.Split(Path.DirectorySeparatorChar);
+            var toDirectories = toPath.Split(Path.DirectorySeparatorChar);
 
             int length = Math.Min(fromDirectories.Length, toDirectories.Length);
             int lastCommonRoot = -1;
@@ -301,7 +316,9 @@ namespace Gibbed.SimCity5.Unpack
             // find common root
             for (int x = 0; x < length; x++)
             {
-                if (string.Compare(fromDirectories[x], toDirectories[x], StringComparison.OrdinalIgnoreCase) != 0)
+                if (string.Compare(fromDirectories[x],
+                                   toDirectories[x],
+                                   StringComparison.OrdinalIgnoreCase) != 0)
                 {
                     break;
                 }
@@ -330,7 +347,8 @@ namespace Gibbed.SimCity5.Unpack
             }
 
             // create relative path
-            return string.Join(Path.DirectorySeparatorChar.ToString(CultureInfo.InvariantCulture), relativePath.ToArray());
+            return string.Join(Path.DirectorySeparatorChar.ToString(CultureInfo.InvariantCulture),
+                               relativePath.ToArray());
         }
     }
 }
