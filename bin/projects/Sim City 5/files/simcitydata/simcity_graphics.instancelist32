@@ -1,6 +1,10 @@
-; 61/5819 (1%)
+; 68/5819 (1%)
 activebuilding
+alertabandoned
 alerthelpwanted
+alertrubble
+alertunmanned
+alertupgraderoad
 ball
 basketball
 black
@@ -12,8 +16,10 @@ confetti
 databindingstutorialdensity
 databindingstutoriallandvalue
 density
+desirability_i
 desirability_r
 educatione2
+educatione3
 evacuation
 flames
 football
@@ -42,6 +48,7 @@ pool
 population
 profit
 profittoken
+rcilight
 residential
 sadness
 shoppers

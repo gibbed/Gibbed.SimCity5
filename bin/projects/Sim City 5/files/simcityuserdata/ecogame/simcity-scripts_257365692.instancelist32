@@ -1,4 +1,4 @@
-; 2163/9547 (22%)
+; 2182/9547 (22%)
 abandoned
 abducted
 accesstooutside
@@ -73,6 +73,7 @@ casinolodgerssatisfiedtotal
 casinolodgerw1satisfied
 casinolodgerw2satisfied
 casinolodgerw3satisfied
+casinomodule
 casinospecialtycurrentmonthexpenses
 casinospecialtycurrentmonthincome
 casinospecialtycurrentmonthprofit
@@ -262,6 +263,7 @@ earthquake
 educatedatmodule
 education
 educatione2
+educatione3
 educationlevel
 electronics
 electronicsbought
@@ -1011,6 +1013,19 @@ module
 moneytoken
 month
 moving
+mscivictutorialgamblinghall
+mstutorialbudgetui
+mstutorialclaimcity
+mstutorialcoalmineplacement
+mstutorialdlc_romanluckcasino
+mstutorialgiftingcoal
+mstutorialhappiness
+mstutorialmyfirstcity
+mstutorialoilwellplacement
+mstutorialroadupgrades
+mstutorialsharinggarbageservices
+mstutorialtradedepot
+mstutorialtradingsims
 mugging
 murder
 neararson
@@ -1521,6 +1536,7 @@ satellitelaunched
 schoolbus
 schoolbuspassenger
 schoolbusr2
+schoolbusstop
 schoolbust1
 schoolbust1stopunlocked
 schoolbust2
@@ -1549,6 +1565,7 @@ sewagetreated_thishour
 sewagetreateddisplay
 sewagetreatment_capacity
 sewagetreatmentimportexchangerate
+sewagetreatmenttank
 shiftlength
 shoplifting
 shopperrestingw1
@@ -1860,6 +1877,7 @@ tradegiftsendingsimoleons
 tradegiftsimoleonssize
 tradeimportedpowercounter
 tradeimportedwatercounter
+trademap
 tradepoweravailablefromconnection
 tradepowerusedprofit
 tradepowerusedtosend
@@ -2142,6 +2160,7 @@ waterpolluted
 waterproduction
 waterpump
 watersaved
+watertable
 watertabledry
 watertablelow
 watertotransmit
