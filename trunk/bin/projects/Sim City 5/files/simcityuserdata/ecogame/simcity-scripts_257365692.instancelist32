@@ -1,4 +1,4 @@
-; 158/9547 (1%)
+; 164/9547 (1%)
 abandoned
 abducted
 alloy
@@ -78,6 +78,7 @@ maintained
 mayor
 metal
 meteor
+missionglobals
 module
 month
 moving
@@ -99,6 +100,7 @@ plastic
 police
 policehelicopter
 policehelipad
+policelot
 population
 power
 production
@@ -134,13 +136,17 @@ television
 temp
 temperature
 templatebuilding
+templatemissions
 tier
 token
 tornado
 toy
+tradeservicerewards
 train
 transient
 transit
+transitglobals
+transportglobals
 trees
 ufo
 university
