@@ -8,8 +8,8 @@
   <type id="0x03E421F0"              />
   <type id="0x0469A3F7" ext="shader"  >Binary Shader Blobs</type>
   <type id="0x07B53899"              />
-  <type id="0x08068AEB"              />
-  <type id="0x08068AEC"              />
+  <type id="0x08068AEB" ext="er2bin"  >argscript bytecode</type>
+  <type id="0x08068AEC" ext="er2"     >argscript source</type>
   <type id="0x0A4D8D09" ext="bnk"     >WWise Bank</type>
   <type id="0x0A98EAF0" ext="json"    >JSON</type>
   <type id="0x0D9E5710" ext="wav"     >WWise Audio</type>

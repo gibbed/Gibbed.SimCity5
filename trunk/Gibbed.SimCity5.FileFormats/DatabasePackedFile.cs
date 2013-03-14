@@ -167,6 +167,11 @@ namespace Gibbed.SimCity5.FileFormats
                 indexSize = header.IndexSize;
             }
 
+            if (indexOffset == 0)
+            {
+                throw new FormatException();
+            }
+
             this.IndexOffset = indexOffset;
             this.IndexSize = indexSize;
 
