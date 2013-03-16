@@ -1,4 +1,4 @@
-; 54/152 (35%)
+; 75/152 (49%)
 disasteractiverobot
 drvu
 drvu_escape
@@ -7,6 +7,7 @@ drvu_out
 drvu_robot
 drvuhenchman
 drvuhenchman_max
+drvurules
 flammable
 globalmission_msheroesvillianscrimepays1
 globalmission_msheroesvillianscrimepays2
@@ -26,8 +27,13 @@ hero_garage_built
 hero_garage_unlocked
 hero_reticulator_built
 hero_reticulator_unlocked
+herobase
+heroemergencyresponse
 heroesandvillains
+herogarage
 heropoints
+heroreticulator
+herovillainrules
 jail
 jail_french
 maxisman
@@ -43,6 +49,18 @@ maxisman_out
 maxisman_outtocrimeinprogress
 maxisman_outtoneedsambulance
 missionglobals
+msheroesvillianscrimepays1
+msheroesvillianscrimepays2
+msheroesvillianscrimepays3
+msheroesvillianscrimepays4
+msheroesvillianscrimepays5
+msheroesvillianscrimepays6
+msheroesvilliansnoregrets1
+msheroesvilliansnoregrets2
+msheroesvilliansnoregrets3
+msheroesvilliansnoregrets4
+msheroesvilliansnoregrets5
+robotdisaster
 sim_ddflist
 villain_base_built
 villain_base_ison
@@ -52,4 +70,7 @@ villain_garage_unlocked
 villain_henchmensent
 villain_lab_built
 villain_lab_unlocked
+villainbase
+villaingarage
+villainlab
 villainpoints
