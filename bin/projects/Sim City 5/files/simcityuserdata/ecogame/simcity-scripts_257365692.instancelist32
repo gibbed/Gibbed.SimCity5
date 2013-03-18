@@ -1,5 +1,6 @@
-; 2275/9547 (23%)
+; 2293/9547 (24%)
 abandoned
+abandonedenabled
 abducted
 accesstooutside
 accesstooutsidecapacity
@@ -12,6 +13,7 @@ adjustedexpenses
 adjustedincome
 aircargoouttoday
 aircargooutyesterday
+airpollutionenabled
 airportlowattractionw2
 airportlowattractionw3
 alloy
@@ -47,6 +49,7 @@ attractionlevel
 availablerecyclingcenter
 base
 bedrock
+buildingistaxed
 buildinglevel
 buildingsatellite
 buildingtaxvalue
@@ -94,6 +97,9 @@ casinotouristw3incomedisplay
 casinotouristw3today
 casinotouristw3yesterday
 chance
+chance25percent
+chance50percent
+chance75percent
 cheatbugs
 chosenottobeacriminal
 claimed
@@ -181,6 +187,8 @@ costsfromstadium
 countedpower
 crime
 crime_clearcars
+crimeenabled
+crimeinprogress
 crimelevel_perday
 crimelevel_thisday
 crimescommitted
@@ -269,6 +277,7 @@ disastermeltdown_hadmeltdown
 disastermeltdown_inprogress
 disastermeltdown_recent
 disastermeltdown_timerrecentmeltdown
+disastersenabled
 earthquake
 educatedatmodule
 education
@@ -388,6 +397,7 @@ ferryt1stop
 ferrytripstoday
 ferrytripsyesterday
 filler
+fireenabled
 firefighter
 firefuel
 firehelicopter
@@ -459,6 +469,7 @@ garbageaddcheat
 garbageburnedperhour
 garbagedisplay
 garbagedumpcapacity
+garbageenabled
 garbageincinerator
 garbageincityperday
 garbageincityperday_last
@@ -642,6 +653,7 @@ greatworksresource3delivered
 greatworksresourcedelivered
 greatworkssignedupcounter
 greatworksunlocked
+groundpollutionenabled
 guestw1
 guestw2
 guestw3
@@ -685,10 +697,12 @@ hasoil
 hasore
 hassolarfarm
 hasspacecenter
+hazmatfire
 hazmatfiretrucksavailable
 hazmatgarageunlocked
 hazmattruck
 hazmattruckr2
+healthenabled
 healthservicetoken
 healthservicetokencounter
 healthservicetokengranted
@@ -703,6 +717,8 @@ historytemp
 homeless
 homelessdead
 homelessdisplay
+homelessenabled
+homelessfood
 homelessforaging
 homelesspanhandling
 homelessperperiod
@@ -1111,6 +1127,7 @@ nearmugging
 nearmurder
 nearrobbery
 nearshoplifting
+needsambulance
 neighborgarbagedumpcapacity
 neighborgarbageindump
 neighborhospitalrooms
@@ -1634,6 +1651,7 @@ service
 sewage
 sewagedumped_perhour
 sewagedumped_thishour
+sewageenabled
 sewageexportallowed
 sewageexportallowedtotransmit
 sewagemainstorage

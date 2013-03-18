@@ -1,4 +1,4 @@
-; 2985/12081 (24%)
+; 2988/12081 (24%)
 abandonedalert
 achievementslayout
 advisor_female_bigbiz_metals
@@ -660,6 +660,7 @@ cratefactory
 crime
 crime_clearcars
 crimealert
+crimeinprogress
 crime-risk
 criminal
 cruiseshipt2stop
@@ -1017,6 +1018,7 @@ happinesssmallbarfill+3
 happinesssmallbarfill+4
 happinesssmallbarfill+5
 hashpatern
+hazmatfire
 hazmatfirealert
 hazmattruck
 hazmattruckr2
@@ -2088,6 +2090,7 @@ moon
 movetool
 navbutton07
 needresourcesalert
+needsambulance
 negativethoughtballoonbuttontemplate
 networks
 new
