@@ -63,13 +63,13 @@ namespace Gibbed.SimCity5.FileFormats
             {
                 throw new FormatException("not a database packed file");
             }
+            input.Seek(-4, SeekOrigin.Current);
 
             this.IsBig = magic == BigHeader.Signature;
-
             if (this.IsBig == false)
             {
                 var header = input.ReadStructure<Header>();
-                if (header.IndexVersion != 3)
+                if (header.IndexType != 3)
                 {
                     throw new FormatException("index version was not 3");
                 }
@@ -84,7 +84,7 @@ namespace Gibbed.SimCity5.FileFormats
                 if (header.Unknown0C != 0 ||
                     header.Unknown10 != 0 ||
                     header.Unknown20 != 0 ||
-                    header.OldIndexOffset != 0)
+                    header.IndexOffsetOld != 0)
                 {
                     throw new FormatException();
                 }
@@ -92,7 +92,6 @@ namespace Gibbed.SimCity5.FileFormats
                 if (header.Unset30 != 0 ||
                     header.Unset34 != 0 ||
                     header.Unset38 != 0 ||
-                    header.Unset44 != 0 ||
                     header.Unset48 != 0 ||
                     header.Unset4C != 0 ||
                     header.Unset50 != 0 ||
@@ -111,13 +110,13 @@ namespace Gibbed.SimCity5.FileFormats
 
                 this._Version = new Version(header.MajorVersion, header.MinorVersion);
                 indexCount = header.IndexCount;
-                indexOffset = header.IndexOffset != 0 ? header.IndexOffset : header.OldIndexOffset;
+                indexOffset = header.IndexOffset != 0 ? header.IndexOffset : header.IndexOffsetOld;
                 indexSize = header.IndexSize;
             }
             else
             {
                 var header = input.ReadStructure<BigHeader>();
-                if (header.IndexVersion != 3)
+                if (header.IndexType != 3)
                 {
                     throw new FormatException("index version was not 3");
                 }
@@ -136,7 +135,8 @@ namespace Gibbed.SimCity5.FileFormats
                     throw new FormatException();
                 }
 
-                if (header.Unset30 != 0 ||
+                if (header.Unset2C != 0 ||
+                    header.Unset30 != 0 ||
                     header.Unset40 != 0 ||
                     header.Unset44 != 0 ||
                     header.Unset48 != 0 ||
@@ -217,33 +217,40 @@ namespace Gibbed.SimCity5.FileFormats
                         var compressedSize = data.ReadValueU32(endian);
                         var uncompressedSize = data.ReadValueU32(endian);
 
-                        short compressionFlags;
+                        CompressionScheme compressionScheme;
                         ushort flags;
                         if (this.IsBig == false)
                         {
                             if ((compressedSize & 0x80000000) != 0)
                             {
                                 compressedSize &= ~0x80000000;
-                                compressionFlags = data.ReadValueS16(endian);
+                                compressionScheme = data.ReadValueEnum<CompressionScheme>(endian);
                                 flags = data.ReadValueU16(endian);
                             }
                             else
                             {
                                 throw new FormatException("strange index data");
-                                compressionFlags = compressedSize == uncompressedSize ? (short)0 : (short)-1;
+                                compressionScheme = compressedSize == uncompressedSize
+                                                      ? CompressionScheme.None
+                                                      : CompressionScheme.RefPack;
                                 flags = 0;
                             }
                         }
                         else
                         {
-                            compressionFlags = data.ReadValueS16(endian);
+                            compressionScheme = data.ReadValueEnum<CompressionScheme>(endian);
                             flags = data.ReadValueU16(endian);
                         }
 
-                        if (compressionFlags != 0 &&
-                            compressionFlags != -1)
+                        if (compressionScheme != CompressionScheme.None &&
+                            compressionScheme != CompressionScheme.RefPack)
                         {
                             throw new FormatException("bad compression flags");
+                        }
+
+                        if (flags != 1)
+                        {
+                            throw new FormatException();
                         }
 
                         this._Entries.Add(new Entry
@@ -252,7 +259,7 @@ namespace Gibbed.SimCity5.FileFormats
                             Offset = offset,
                             CompressedSize = compressedSize,
                             UncompressedSize = uncompressedSize,
-                            CompressionFlags = compressionFlags,
+                            CompressionScheme = compressionScheme,
                             Flags = flags,
                             IsValid = true
                         });
@@ -266,7 +273,7 @@ namespace Gibbed.SimCity5.FileFormats
             }
         }
 
-        public void WriteHeader(Stream output, long indexOffset, long indexSize)
+        public void WriteHeader(Stream output, long indexOffset, uint indexSize)
         {
             if (this.IsBig == false)
             {
@@ -275,10 +282,10 @@ namespace Gibbed.SimCity5.FileFormats
                 {
                     MajorVersion = this._Version.Major,
                     MinorVersion = this._Version.Minor,
-                    IndexVersion = 3,
+                    IndexType = 3,
                     IndexCount = this._Entries.Count,
                     IndexOffset = (int)indexOffset,
-                    IndexSize = (int)indexSize
+                    IndexSize = indexSize
                 };
                 output.WriteStructure(header);
             }
@@ -289,7 +296,7 @@ namespace Gibbed.SimCity5.FileFormats
                 {
                     MajorVersion = this._Version.Major,
                     MinorVersion = this._Version.Minor,
-                    IndexVersion = 3,
+                    IndexType = 3,
                     IndexCount = this._Entries.Count,
                     IndexOffset = indexOffset,
                     IndexSize = indexSize
@@ -393,7 +400,7 @@ namespace Gibbed.SimCity5.FileFormats
 
                     output.WriteValueU32(entry.CompressedSize);
                     output.WriteValueU32(entry.UncompressedSize);
-                    output.WriteValueS16(entry.CompressionFlags);
+                    output.WriteValueEnum<CompressionScheme>(entry.CompressionScheme);
                     output.WriteValueU16(entry.Flags);
                 }
             }
@@ -411,22 +418,19 @@ namespace Gibbed.SimCity5.FileFormats
 
         public struct Entry
         {
-            public ResourceKey Key;
+            public ResourceKey Key { get; set; }
+            public long Offset { get; set; }
+            public uint CompressedSize { get; set; }
+            public uint UncompressedSize { get; set; }
+            public CompressionScheme CompressionScheme { get; set; }
+            public ushort Flags { get; set; }
 
-            #region public bool Compressed;
+            public bool IsValid { get; set; }
+
             public bool IsCompressed
             {
-                get { return this.CompressionFlags == -1; }
+                get { return this.CompressionScheme != CompressionScheme.None; }
             }
-            #endregion
-
-            public long Offset;
-            public uint CompressedSize;
-            public uint UncompressedSize;
-            public short CompressionFlags;
-            public ushort Flags;
-
-            public bool IsValid;
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -434,30 +438,29 @@ namespace Gibbed.SimCity5.FileFormats
         {
             public const uint Signature = 0x46504244; // 'DBPF'
 
-            //public uint Magic; // 00
-            public int MajorVersion; // 04
-            public int MinorVersion; // 08
-            public readonly uint Unknown0C; // 0C
-            public readonly uint Unknown10; // 10
-            public readonly uint Zero14; // 14 - Always 0?
-            public readonly uint Zero18; // 18 - Always 0?
-            public readonly uint Zero1C; // 1C - Always 0?
-            public readonly uint Unknown20; // 20
-            public int IndexCount; // 24
-            public int OldIndexOffset; // 28
-            public int IndexSize; // 2C
-            public readonly uint Unset30; // 30
-            public readonly uint Unset34; // 34
-            public readonly uint Unset38; // 38
-            public uint IndexVersion; // 3C - Always 3?
-            public int IndexOffset; // 40
-            public readonly uint Unset44; // 44
-            public readonly uint Unset48; // 48
-            public readonly uint Unset4C; // 4C
-            public readonly uint Unset50; // 50
-            public readonly uint Unset54; // 54
-            public readonly uint Unset58; // 58
-            public readonly uint Unset5C; // 5C
+            public uint Magic;
+            public int MajorVersion;
+            public int MinorVersion;
+            public readonly uint Unknown0C;
+            public readonly uint Unknown10;
+            public readonly uint Zero14; // Always 0?
+            public readonly uint Zero18; // Always 0?
+            public readonly uint Zero1C; // Always 0?
+            public readonly uint Unknown20;
+            public int IndexCount;
+            public int IndexOffsetOld;
+            public uint IndexSize;
+            public readonly uint Unset30;
+            public readonly uint Unset34;
+            public readonly uint Unset38;
+            public uint IndexType; // Always 3?
+            public long IndexOffset;
+            public readonly uint Unset48;
+            public readonly uint Unset4C;
+            public readonly uint Unset50;
+            public readonly uint Unset54;
+            public readonly uint Unset58;
+            public readonly uint Unset5C;
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -465,34 +468,41 @@ namespace Gibbed.SimCity5.FileFormats
         {
             public const uint Signature = 0x46424244; // 'DBBF'
 
-            //public uint Magic; // 00
-            public int MajorVersion; // 04
-            public int MinorVersion; // 08
-            public readonly uint Unknown0C; // 0C
-            public readonly uint Unknown10; // 10
-            public readonly uint Zero14; // 14 - Always 0?
-            public readonly uint Zero18; // 18 - Always 0?
-            public readonly uint Zero1C; // 1C - Always 0?
-            public readonly uint Unknown20; // 20
-            public int IndexCount; // 24
-            public long IndexSize; // 28
-            public readonly uint Unset30; // 30
-            public uint IndexVersion; // 34 - Always 3?
-            public long IndexOffset; // 38
-            public readonly uint Unset40; // 40
-            public readonly uint Unset44; // 44
-            public readonly uint Unset48; // 48
-            public readonly uint Unset4C; // 4C
-            public readonly uint Unset50; // 50
-            public readonly uint Unset54; // 54
-            public readonly uint Unset58; // 58
-            public readonly uint Unset5C; // 5C
-            public readonly uint Unset60; // 60
-            public readonly uint Unset64; // 64
-            public readonly uint Unset68; // 68
-            public readonly uint Unset6C; // 6C
-            public readonly uint Unset70; // 70
-            public readonly uint Unset74; // 74
+            public uint Magic;
+            public int MajorVersion;
+            public int MinorVersion;
+            public readonly uint Unknown0C;
+            public readonly uint Unknown10;
+            public readonly uint Zero14; // Always 0?
+            public readonly uint Zero18; // Always 0?
+            public readonly uint Zero1C; // Always 0?
+            public readonly uint Unknown20;
+            public int IndexCount;
+            public uint IndexSize;
+            public readonly uint Unset2C;
+            public readonly uint Unset30;
+            public uint IndexType; // Always 3?
+            public long IndexOffset;
+            public readonly uint Unset40;
+            public readonly uint Unset44;
+            public readonly uint Unset48;
+            public readonly uint Unset4C;
+            public readonly uint Unset50;
+            public readonly uint Unset54;
+            public readonly uint Unset58;
+            public readonly uint Unset5C;
+            public readonly uint Unset60;
+            public readonly uint Unset64;
+            public readonly uint Unset68;
+            public readonly uint Unset6C;
+            public readonly uint Unset70;
+            public readonly uint Unset74;
+        }
+
+        public enum CompressionScheme : ushort
+        {
+            None = 0x0000,
+            RefPack = 0xFFFF,
         }
     }
 }
