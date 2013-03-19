@@ -40,7 +40,7 @@ namespace Gibbed.SimCity5.FileFormats
         private class StreamEntry : Entry
         {
             public long Offset { get; set; }
-            public short CompressedFlags { get; set; }
+            public DatabasePackedFile.CompressionScheme CompressionScheme { get; set; }
             public ushort Flags { get; set; }
         }
 
@@ -97,7 +97,7 @@ namespace Gibbed.SimCity5.FileFormats
                                           Offset = entry.Offset,
                                           CompressedSize = entry.CompressedSize,
                                           UncompressedSize = entry.UncompressedSize,
-                                          CompressedFlags = entry.CompressionFlags,
+                                          CompressionScheme = entry.CompressionScheme,
                                           Flags = entry.Flags,
                                       });
 
@@ -300,7 +300,7 @@ namespace Gibbed.SimCity5.FileFormats
                         {
                             entry.UncompressedSize = (uint)(memoryEntry.Data.Length);
                             entry.CompressedSize = (uint)(compressed.Length) | 0x80000000;
-                            entry.CompressionFlags = -1;
+                            entry.CompressionScheme = DatabasePackedFile.CompressionScheme.RefPack;
                             entry.Flags = 1;
                             memoryEntry.Data = compressed;
                         }
@@ -308,7 +308,7 @@ namespace Gibbed.SimCity5.FileFormats
                         {
                             entry.UncompressedSize = memoryEntry.UncompressedSize;
                             entry.CompressedSize = memoryEntry.CompressedSize | 0x80000000;
-                            entry.CompressionFlags = 0;
+                            entry.CompressionScheme = DatabasePackedFile.CompressionScheme.None;
                             entry.Flags = 1;
                         }
 
@@ -349,7 +349,7 @@ namespace Gibbed.SimCity5.FileFormats
                             entry.CompressedSize = streamEntry.CompressedSize | 0x80000000;
                             entry.UncompressedSize = streamEntry.UncompressedSize;
                             entry.Offset = streamEntry.Offset;
-                            entry.CompressionFlags = streamEntry.CompressedFlags;
+                            entry.CompressionScheme = streamEntry.CompressionScheme;
                             entry.Flags = streamEntry.Flags;
                         }
                         else
@@ -364,7 +364,7 @@ namespace Gibbed.SimCity5.FileFormats
                 this._Stream.Seek(this._BaseOffset + this._EndOfDataOffset, SeekOrigin.Begin);
                 dbpf.WriteIndex(this._Stream);
 
-                long indexSize = (this._Stream.Position - (this._BaseOffset + this._EndOfDataOffset));
+                uint indexSize = (uint)(this._Stream.Position - (this._BaseOffset + this._EndOfDataOffset));
 
                 this._Stream.Seek(this._BaseOffset, SeekOrigin.Begin);
                 dbpf.WriteHeader(this._Stream, this._EndOfDataOffset, indexSize);
@@ -406,7 +406,7 @@ namespace Gibbed.SimCity5.FileFormats
                         {
                             entry.UncompressedSize = (uint)(memoryEntry.Data.Length);
                             entry.CompressedSize = (uint)(compressed.Length) | 0x80000000;
-                            entry.CompressionFlags = -1;
+                            entry.CompressionScheme = DatabasePackedFile.CompressionScheme.None;
                             entry.Flags = 1;
                             entry.Offset = this._EndOfDataOffset;
                             memoryEntry.Data = compressed;
@@ -415,7 +415,7 @@ namespace Gibbed.SimCity5.FileFormats
                         {
                             entry.UncompressedSize = memoryEntry.UncompressedSize;
                             entry.CompressedSize = memoryEntry.CompressedSize | 0x80000000;
-                            entry.CompressionFlags = 0;
+                            entry.CompressionScheme = 0;
                             entry.Flags = 1;
                             entry.Offset = this._EndOfDataOffset;
                         }
@@ -430,7 +430,7 @@ namespace Gibbed.SimCity5.FileFormats
                         {
                             entry.CompressedSize = streamEntry.CompressedSize | 0x80000000;
                             entry.UncompressedSize = streamEntry.UncompressedSize;
-                            entry.CompressionFlags = streamEntry.CompressedFlags;
+                            entry.CompressionScheme = streamEntry.CompressionScheme;
                             entry.Flags = streamEntry.Flags;
                             entry.Offset = this._EndOfDataOffset;
 
@@ -459,7 +459,7 @@ namespace Gibbed.SimCity5.FileFormats
 
                 dbpf.WriteIndex(clean);
 
-                long indexSize = clean.Position - this._EndOfDataOffset;
+                uint indexSize = (uint)(clean.Position - this._EndOfDataOffset);
 
                 clean.Seek(0, SeekOrigin.Begin);
                 dbpf.WriteHeader(clean, this._EndOfDataOffset, indexSize);
@@ -501,7 +501,7 @@ namespace Gibbed.SimCity5.FileFormats
                                       Offset = entry.Offset,
                                       CompressedSize = entry.CompressedSize,
                                       UncompressedSize = entry.UncompressedSize,
-                                      CompressedFlags = entry.CompressionFlags,
+                                      CompressionScheme = entry.CompressionScheme,
                                       Flags = entry.Flags,
                                   });
             }

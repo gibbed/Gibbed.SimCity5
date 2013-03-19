@@ -185,7 +185,7 @@ namespace Gibbed.SimCity5.Pack
                                 Key = key,
                                 CompressedSize = (uint)input.Length | 0x80000000,
                                 UncompressedSize = (uint)input.Length,
-                                CompressionFlags = 0,
+                                CompressionScheme = DatabasePackedFile.CompressionScheme.None,
                                 Flags = 1,
                                 Offset = offset,
                             });
@@ -205,7 +205,7 @@ namespace Gibbed.SimCity5.Pack
                                     Key = key,
                                     CompressedSize = (uint)(compressed.Length) | 0x80000000,
                                     UncompressedSize = (uint)input.Length,
-                                    CompressionFlags = -1,
+                                    CompressionScheme = DatabasePackedFile.CompressionScheme.RefPack,
                                     Flags = 1,
                                     Offset = offset,
                                 });
@@ -221,7 +221,7 @@ namespace Gibbed.SimCity5.Pack
                                     Key = key,
                                     CompressedSize = (uint)input.Length | 0x80000000,
                                     UncompressedSize = (uint)input.Length,
-                                    CompressionFlags = 0,
+                                    CompressionScheme = 0,
                                     Flags = 1,
                                     Offset = offset,
                                 });
@@ -234,7 +234,7 @@ namespace Gibbed.SimCity5.Pack
 
                 dbpf.WriteIndex(output);
 
-                long indexSize = output.Position - endOfData;
+                var indexSize = (uint)(output.Position - endOfData);
 
                 output.Position = 0;
                 dbpf.WriteHeader(output, endOfData, indexSize);
