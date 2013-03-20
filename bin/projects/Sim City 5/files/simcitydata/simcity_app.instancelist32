@@ -1,4 +1,4 @@
-; 745/1875 (39%)
+; 746/1875 (39%)
 03_green_challenge_large_gamescom
 03_green_challenge_small_gamescom
 07_population_explosion_large
@@ -621,6 +621,7 @@ sidefader
 sillylogo
 sim
 simcity
+simcitycore
 simcityglobal
 simcityworldlogo
 simcityworldpanel
