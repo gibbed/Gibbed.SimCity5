@@ -1,30 +1,30 @@
 <types>
-  <type id="0x00B1B104"            ext="prop"   tag="ProperyList"     >Property List</type>
-  <type id="0x02393756"            ext="cur"    tag="Cursor"          >Cursor</type>
-  <type id="0x024A0E52"            ext="txt"    tag="TextFile"        >Text</type>
-  <type id="0x02FAC0B6"                                              />
-  <type id="0x03E421EC"                         tag="ImageData8"     />
-  <type id="0x03E421ED"                         tag="ImageData32"    />
-  <type id="0x03E421F0"                         tag="ImageData16"    />
-  <type id="0x0469A3F7"            ext="mat"    tag="Materials"       >Materials</type>
-  <type id="0x07B53899"                                              />
-  <type id="0x08068AEB"            ext="er2bin" tag="EcoRulesBinary"  >Eco Rules Binary</type>
-  <type id="0x08068AEC"            ext="er2"    tag="EcoRulesScript"  >Eco Rules Script</type>
-  <type id="0x0A4D8D09"            ext="bnk"    tag="WwiseBNK"        >WWise BNK</type>
-  <type id="0x0A98EAF0"            ext="json"   tag="JSONScript"      >JSON Script</type>
-  <type id="0x0D9E5710"            ext="wem"    tag="WEM"             >WWise WEM</type>
-  <type id="0x12952634" src="dat"  ext="dat"                          >Generic Data</type>
-  <type id="0x276CA4B9" src="ttf"  ext="ttf"                          >TrueType Font</type>
-  <type id="0x2C978DB6" src="css"  ext="css"                          >Cascading Style Sheet</type>
-  <type id="0x2E5A9763"                                              />
-  <type id="0x2F4E681B"            ext="rw4"    tag="Arena"           >RenderWare4 Model</type>
-  <type id="0x2F4E681C"            ext="raster" tag="Raster"          >Texture</type>
-  <type id="0x2F7D0004"            ext="png"    tag="PNG"             >PNG</type>
-  <type id="0x2F7D0006"            ext="tga"    tag="TGA"             >TGA</type>
-  <type id="0x2F7D0007"            ext="gif"    tag="GIF"             >GIF</type>
-  <type id="0x376840D7" src="vp6"  ext="vp6"    tag="VP6"             >On2 TrueMotion VP6</type>
-  <type id="0x3F8662EA" src="jpg"  ext="jpg"                          >JPG</type>
-  <type id="0x67771F5C" src="js"   ext="js"                           >Javascript</type>
-  <type id="0xDD6233D6" src="html" ext="html"                         >HTML</type>
-  <type id="0xEA5118B0"            ext="swb"                         />
+  <type id="0x00B1B104"                   ext="prop"   tag="ProperyList"     >Property List</type>
+  <type id="0x02393756"                   ext="cur"    tag="Cursor"          >Cursor</type>
+  <type id="0x024A0E52"                   ext="txt"    tag="TextFile"        >Text</type>
+  <type id="0x02FAC0B6"                   ext="locale"                       >String Table</type>
+  <type id="0x03E421EC"                   ext="img8"   tag="ImageData8"     />
+  <type id="0x03E421ED"                   ext="img32"  tag="ImageData32"    />
+  <type id="0x03E421F0"                   ext="img16"  tag="ImageData16"    />
+  <type id="0x0469A3F7"                   ext="mat"    tag="Materials"       >Materials</type>
+  <type id="0x07B53899"                   ext="delrec"                       >List of records to be deleted for a patch</type>
+  <type id="0x08068AEB"                   ext="er2bin" tag="EcoRulesBinary"  >Eco Rules Binary</type>
+  <type id="0x08068AEC"                   ext="er2"    tag="EcoRulesScript"  >Eco Rules Script</type>
+  <type id="0x0A4D8D09"                   ext="bnk"    tag="WwiseBNK"        >WWise BNK</type>
+  <type id="0x0A98EAF0"                   ext="json"   tag="JSONScript"      >JSON Script</type>
+  <type id="0x0D9E5710"                   ext="wem"    tag="WEM"             >WWise WEM</type>
+  <type id="0x12952634" src="dat"         ext="dat"                          >Generic Data</type>
+  <type id="0x276CA4B9" src="ttf"         ext="ttf"                          >TrueType Font</type>
+  <type id="0x2C978DB6" src="css"         ext="css"                          >Cascading Style Sheet</type>
+  <type id="0x2E5A9763" src="lrumetadata" ext="lrumd"                        >LRU Cache Metadata</type>
+  <type id="0x2F4E681B"                   ext="rw4"    tag="Arena"           >RenderWare4 Model</type>
+  <type id="0x2F4E681C"                   ext="raster" tag="Raster"          >Texture</type>
+  <type id="0x2F7D0004"                   ext="png"    tag="PNG"             >PNG</type>
+  <type id="0x2F7D0006"                   ext="tga"    tag="TGA"             >TGA</type>
+  <type id="0x2F7D0007"                   ext="gif"    tag="GIF"             >GIF</type>
+  <type id="0x376840D7" src="vp6"         ext="vp6"    tag="VP6"             >On2 TrueMotion VP6</type>
+  <type id="0x3F8662EA" src="jpg"         ext="jpg"                          >JPG</type>
+  <type id="0x67771F5C" src="js"          ext="js"                           >Javascript</type>
+  <type id="0xDD6233D6" src="html"        ext="html"                         >HTML</type>
+  <type id="0xEA5118B0"                   ext="swb"                          >Effects</type>
 </types>
