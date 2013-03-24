@@ -1,7 +1,10 @@
-; 154/700 (22%)
+; 163/700 (23%)
 2k_terrain_ground
 brushes
 cities
+coalecomapbrushes
+desirabilityecomapbrushes
+desirabilitytwoecomapbrushes
 ecomap_x00_y00_mip3
 ecomap_x00_y00_mip4
 ecomap_x00_y01_mip2
@@ -59,6 +62,7 @@ ecomap_x09_y05_mip0
 ecomap_x09_y06_mip0
 ecomap_x10_y06_mip0
 environment
+forestecomapbrushes
 forestmapminmax
 grass
 heightmap_x00_y00_mip3
@@ -151,5 +155,10 @@ heightmap_x10_y05_mip0
 heightmap_x10_y06_mip0
 heightmap_x10_y07_mip0
 heightmapminmax
+oilecomapbrushes
+oreecomapbrushes
 region
+soilecomapbrushes
 terraineditor
+tessendorfwater
+watertableecomapbrushes
