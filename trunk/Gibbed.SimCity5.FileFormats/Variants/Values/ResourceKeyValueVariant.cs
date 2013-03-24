@@ -26,7 +26,7 @@ using Gibbed.IO;
 
 namespace Gibbed.SimCity5.FileFormats.Variants.Values
 {
-    public class ResourceKeyValueVariant : ValueVariant<ResourceKey>
+    public sealed class ResourceKeyValueVariant : ValueVariant<ResourceKey>
     {
         public ResourceKeyValueVariant()
             : this(ResourceKey.Zero)

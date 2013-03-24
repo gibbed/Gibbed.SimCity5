@@ -25,7 +25,7 @@ using Gibbed.IO;
 
 namespace Gibbed.SimCity5.FileFormats.Variants.Values
 {
-    public class UInt32ValueVariant : ValueVariant<uint>
+    public sealed class UInt32ValueVariant : ValueVariant<uint>
     {
         public UInt32ValueVariant()
             : this(default(uint))

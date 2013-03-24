@@ -29,7 +29,7 @@ using Gibbed.IO;
 
 namespace Gibbed.SimCity5.FileFormats.Variants.Arrays
 {
-    public class String8ArrayVariant : ArrayVariant<string>
+    public sealed class String8ArrayVariant : ArrayVariant<string>
     {
         public String8ArrayVariant()
             : this(default(IEnumerable<string>))

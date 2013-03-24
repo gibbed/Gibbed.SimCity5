@@ -27,7 +27,7 @@ using Gibbed.IO;
 
 namespace Gibbed.SimCity5.FileFormats.Variants.Arrays
 {
-    public class BoundingBoxArrayVariant : ArrayVariant<BoundingBox>
+    public sealed class BoundingBoxArrayVariant : ArrayVariant<BoundingBox>
     {
         public BoundingBoxArrayVariant()
             : this(default(IEnumerable<BoundingBox>))

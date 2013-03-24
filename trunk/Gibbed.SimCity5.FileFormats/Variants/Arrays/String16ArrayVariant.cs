@@ -20,7 +20,6 @@
  *    distribution.
  */
 
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -29,7 +28,7 @@ using Gibbed.IO;
 
 namespace Gibbed.SimCity5.FileFormats.Variants.Arrays
 {
-    public class String16ArrayVariant : ArrayVariant<string>
+    public sealed class String16ArrayVariant : ArrayVariant<string>
     {
         public String16ArrayVariant()
             : this(default(IEnumerable<string>))

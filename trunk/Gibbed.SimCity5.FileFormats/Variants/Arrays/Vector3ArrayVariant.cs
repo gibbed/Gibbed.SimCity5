@@ -27,7 +27,7 @@ using Gibbed.IO;
 
 namespace Gibbed.SimCity5.FileFormats.Variants.Arrays
 {
-    public class Vector3ArrayVariant : ArrayVariant<Vector3>
+    public sealed class Vector3ArrayVariant : ArrayVariant<Vector3>
     {
         public Vector3ArrayVariant()
             : this(default(IEnumerable<Vector3>))

@@ -84,16 +84,9 @@ namespace Gibbed.SimCity5.FileFormats
 
                 flags &= ~VariantFlags.Unknown15;
 
-                BaseVariant variant;
-
-                if ((flags & VariantFlags.Array) == 0)
-                {
-                    variant = ValueVariantFactory.Create(type);
-                }
-                else
-                {
-                    variant = ArrayVariantFactory.Create(type);
-                }
+                var variant = (flags & VariantFlags.Array) == VariantFlags.None
+                                  ? ValueVariantFactory.Create(type)
+                                  : ArrayVariantFactory.Create(type);
 
                 variant.Flags = flags;
                 variant.Deserialize(input, endian);

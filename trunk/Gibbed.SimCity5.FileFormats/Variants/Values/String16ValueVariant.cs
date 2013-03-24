@@ -20,14 +20,13 @@
  *    distribution.
  */
 
-using System;
 using System.IO;
 using System.Text;
 using Gibbed.IO;
 
 namespace Gibbed.SimCity5.FileFormats.Variants.Values
 {
-    public class String16ValueVariant : ValueVariant<string>
+    public sealed class String16ValueVariant : ValueVariant<string>
     {
         public String16ValueVariant()
             : this(default(string))

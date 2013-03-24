@@ -25,7 +25,7 @@ using Gibbed.IO;
 
 namespace Gibbed.SimCity5.FileFormats.Variants.Values
 {
-    public class ColorRgbaValueVariant : ValueVariant<ColorRgba>
+    public sealed class ColorRgbaValueVariant : ValueVariant<ColorRgba>
     {
         public ColorRgbaValueVariant()
             : this(default(ColorRgba))

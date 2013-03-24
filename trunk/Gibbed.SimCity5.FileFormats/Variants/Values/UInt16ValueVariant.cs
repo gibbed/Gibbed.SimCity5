@@ -25,7 +25,7 @@ using Gibbed.IO;
 
 namespace Gibbed.SimCity5.FileFormats.Variants.Values
 {
-    public class UInt16ValueVariant : ValueVariant<ushort>
+    public sealed class UInt16ValueVariant : ValueVariant<ushort>
     {
         public UInt16ValueVariant()
             : this(default(ushort))

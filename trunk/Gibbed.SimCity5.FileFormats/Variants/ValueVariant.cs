@@ -24,7 +24,7 @@ namespace Gibbed.SimCity5.FileFormats.Variants
 {
     public abstract class ValueVariant<TType> : BaseVariant
     {
-        public virtual TType Value { get; set; }
+        public TType Value { get; set; }
 
         internal ValueVariant(TType value)
         {

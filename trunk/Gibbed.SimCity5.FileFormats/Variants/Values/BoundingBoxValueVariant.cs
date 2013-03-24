@@ -25,7 +25,7 @@ using Gibbed.IO;
 
 namespace Gibbed.SimCity5.FileFormats.Variants.Values
 {
-    public class BoundingBoxValueVariant : ValueVariant<BoundingBox>
+    public sealed class BoundingBoxValueVariant : ValueVariant<BoundingBox>
     {
         public BoundingBoxValueVariant()
             : this(default(BoundingBox))

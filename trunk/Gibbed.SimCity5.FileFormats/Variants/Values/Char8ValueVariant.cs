@@ -25,7 +25,7 @@ using Gibbed.IO;
 
 namespace Gibbed.SimCity5.FileFormats.Variants.Values
 {
-    public class Char8ValueVariant : ValueVariant<byte>
+    public sealed class Char8ValueVariant : ValueVariant<byte>
     {
         public Char8ValueVariant()
             : this(default(byte))
