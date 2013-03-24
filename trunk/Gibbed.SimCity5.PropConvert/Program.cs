@@ -240,7 +240,27 @@ namespace Gibbed.SimCity5.PropConvert
                                 throw new InvalidOperationException();
                             }
 
-                            var id = uint.Parse(idText, NumberStyles.AllowHexSpecifier);
+                            uint id;
+                            if (idText.StartsWith("0x") == false)
+                            {
+                                if (propertyIds.ContainsKey(idText) == false)
+                                {
+                                    throw new KeyNotFoundException(string.Format(
+                                        "could not find property id for '{0}'", idText));
+                                }
+
+                                id = propertyIds[idText];
+                            }
+                            else
+                            {
+                                if (uint.TryParse(idText.Substring(2),
+                                                  NumberStyles.AllowHexSpecifier,
+                                                  CultureInfo.InvariantCulture,
+                                                  out id) == false)
+                                {
+                                    throw new FormatException("could not parse hex property id");
+                                }
+                            }
 
                             BaseVariant variant;
                             handler.ImportVariant(property.CreateNavigator(), out variant);
