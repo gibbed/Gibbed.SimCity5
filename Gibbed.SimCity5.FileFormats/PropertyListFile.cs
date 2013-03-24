@@ -23,6 +23,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Gibbed.IO;
 using Gibbed.SimCity5.FileFormats.Variants;
 
@@ -33,7 +34,7 @@ namespace Gibbed.SimCity5.FileFormats
         private readonly Dictionary<uint, BaseVariant> _Properties
             = new Dictionary<uint, BaseVariant>();
 
-        public IEnumerable<uint> Keys
+        public IEnumerable<uint> Ids
         {
             get { return this._Properties.Keys; }
         }
@@ -43,12 +44,12 @@ namespace Gibbed.SimCity5.FileFormats
             const Endian endian = Endian.Big;
 
             output.WriteValueS32(this._Properties.Count, endian);
-            foreach (var kv in this._Properties)
+            foreach (var kv in this._Properties.OrderBy(kv => kv.Key))
             {
-                var key = kv.Key;
+                var id = kv.Key;
                 var variant = kv.Value;
 
-                output.WriteValueU32(key, endian);
+                output.WriteValueU32(id, endian);
                 output.WriteValueEnum<VariantType>(variant.Type, endian);
 
                 var flags = variant.Flags;
@@ -71,7 +72,7 @@ namespace Gibbed.SimCity5.FileFormats
             this._Properties.Clear();
             for (uint i = 0; i < count; i++)
             {
-                var key = input.ReadValueU32(endian);
+                var id = input.ReadValueU32(endian);
                 var type = input.ReadValueEnum<VariantType>(endian);
                 var flags = input.ReadValueEnum<VariantFlags>(endian);
                 var origFlags = flags;
@@ -97,31 +98,31 @@ namespace Gibbed.SimCity5.FileFormats
                 variant.Flags = flags;
                 variant.Deserialize(input, endian);
 
-                this._Properties.Add(key, variant);
+                this._Properties.Add(id, variant);
             }
         }
 
-        public BaseVariant this[uint key]
+        public BaseVariant this[uint id]
         {
             get
             {
-                if (this._Properties.ContainsKey(key) == false)
+                if (this._Properties.ContainsKey(id) == false)
                 {
                     throw new KeyNotFoundException();
                 }
 
-                return this._Properties[key];
+                return this._Properties[id];
             }
 
             set
             {
                 if (value == null)
                 {
-                    this._Properties.Remove(key);
+                    this._Properties.Remove(id);
                 }
                 else
                 {
-                    this._Properties[key] = value;
+                    this._Properties[id] = value;
                 }
             }
         }

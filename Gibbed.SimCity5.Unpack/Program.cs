@@ -118,6 +118,22 @@ namespace Gibbed.SimCity5.Unpack
                 }
             }
 
+            var groupLookup = new PackageGroupLookup();
+            if (manager.ActiveProject != null &&
+                string.IsNullOrEmpty(manager.ActiveProject.ListsPath) == false)
+            {
+                var groupPath = Path.Combine(manager.ActiveProject.ListsPath, "package groups.xml");
+                if (File.Exists(groupPath) == true)
+                {
+                    using (var input = File.OpenRead(groupPath))
+                    {
+                        var serializer = new XmlSerializer(typeof(PackageGroupLookup));
+                        groupLookup = (PackageGroupLookup)serializer.Deserialize(input);
+                    }
+                }
+            }
+
+
             if (verbose == true)
             {
                 Console.WriteLine("Reading package...");
@@ -201,15 +217,26 @@ namespace Gibbed.SimCity5.Unpack
                                 entryName += ".#" + entry.Key.TypeId.ToString("X8", CultureInfo.InvariantCulture);
                             }
 
-                            if (entry.Key.GroupId == 0)
+                            var groupInfo = groupLookup.GetGroupInfo(entry.Key.GroupId);
+                            if (groupInfo == null ||
+                                string.IsNullOrEmpty(groupInfo.Name) == true)
                             {
-                                entryName = Path.Combine("default", entryName);
+                                if (entry.Key.GroupId == 0)
+                                {
+                                    entryName = Path.Combine("default", entryName);
+                                }
+                                else
+                                {
+                                    entryName = Path.Combine("__UNKNOWNGROUP",
+                                                             "#" +
+                                                             entry.Key.GroupId.ToString("X8",
+                                                                                        CultureInfo.InvariantCulture),
+                                                             entryName);
+                                }
                             }
                             else
                             {
-                                entryName =
-                                    Path.Combine("#" + entry.Key.GroupId.ToString("X8", CultureInfo.InvariantCulture),
-                                                 entryName);
+                                entryName = Path.Combine(groupInfo.Name, entryName);
                             }
 
                             if (filter != null &&
@@ -220,7 +247,7 @@ namespace Gibbed.SimCity5.Unpack
 
                             if (isUnknown == true)
                             {
-                                entryName = Path.Combine("__UNKNOWN", entryName);
+                                entryName = Path.Combine("__UNKNOWNNAME", entryName);
                             }
 
                             var entryPath = Path.Combine(outputPath, entryName);
