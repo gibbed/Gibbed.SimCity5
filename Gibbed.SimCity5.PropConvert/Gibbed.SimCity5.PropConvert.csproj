@@ -44,7 +44,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Handlers\ArrayHandler.cs" />
+    <Compile Include="Handlers\Arrays\BoundingBoxArrayHandler.cs" />
+    <Compile Include="Handlers\Arrays\ColorRgbaArrayHandler.cs" />
+    <Compile Include="Handlers\Arrays\ColorRgbArrayHandler.cs" />
+    <Compile Include="Handlers\Arrays\Float32ArrayHandler.cs" />
+    <Compile Include="Handlers\Arrays\Int32ArrayHandler.cs" />
+    <Compile Include="Handlers\Arrays\ResourceKeyArrayHandler.cs" />
+    <Compile Include="Handlers\Arrays\String8ArrayHandler.cs" />
+    <Compile Include="Handlers\Arrays\TransformArrayHandler.cs" />
     <Compile Include="Handlers\Arrays\UInt32ArrayHandler.cs" />
+    <Compile Include="Handlers\Arrays\Vector2ArrayHandler.cs" />
+    <Compile Include="Handlers\Arrays\Vector3ArrayHandler.cs" />
+    <Compile Include="Handlers\Arrays\Vector4ArrayHandler.cs" />
     <Compile Include="Handlers\BaseHandler.cs" />
     <Compile Include="Handlers\HandlerFactory.cs" />
     <Compile Include="Handlers\SimpleArrayHandler.cs" />
@@ -72,6 +83,7 @@
     <Compile Include="NameComparer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyLookup.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gibbed.IO\Gibbed.IO.csproj">

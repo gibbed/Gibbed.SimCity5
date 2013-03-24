@@ -24,7 +24,9 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Xml;
+using System.Xml.Serialization;
 using System.Xml.XPath;
 using Gibbed.SimCity5.FileFormats;
 using Gibbed.SimCity5.FileFormats.Variants;
@@ -120,14 +122,32 @@ namespace Gibbed.SimCity5.PropConvert
                 Console.WriteLine("Warning: no active project loaded.");
             }
 
+            var propertyLookup = new PropertyLookup();
+            if (manager.ActiveProject != null &&
+                string.IsNullOrEmpty(manager.ActiveProject.ListsPath) == false)
+            {
+                var propertyNamesPath = Path.Combine(manager.ActiveProject.ListsPath, "property names.xml");
+                if (File.Exists(propertyNamesPath) == true)
+                {
+                    using (var input = File.OpenRead(propertyNamesPath))
+                    {
+                        var serializer = new XmlSerializer(typeof(PropertyLookup));
+                        propertyLookup = (PropertyLookup)serializer.Deserialize(input);
+                    }
+                }
+            }
+
+            var propertyNames = propertyLookup.Properties.ToDictionary(p => p.Id, p => p.Name);
+            var propertyIds = propertyLookup.Properties.ToDictionary(p => p.Name, p => p.Id);
+
             Dictionary<Type, Handlers.BaseHandler> typeHandlers;
             Dictionary<string, Handlers.BaseHandler> nameHandlers;
             Handlers.HandlerFactory.GetHandlers(out typeHandlers, out nameHandlers);
 
-            _Names = null;
-
             if (mode == Mode.Export)
             {
+                var comparer = new NameComparer(propertyNames);
+
                 string inputPath = extras[0];
                 string outputPath = extras.Count > 1
                                         ? extras[1]
@@ -144,7 +164,7 @@ namespace Gibbed.SimCity5.PropConvert
                     var settings = new XmlWriterSettings
                     {
                         Indent = true,
-                        IndentChars = "\t",
+                        IndentChars = "  ",
                         CheckCharacters = false,
                     };
 
@@ -152,18 +172,29 @@ namespace Gibbed.SimCity5.PropConvert
 
                     writer.WriteStartDocument();
                     writer.WriteStartElement("properties");
-                    foreach (var key in propertyListFile.Keys)
+                    foreach (var id in propertyListFile.Ids.OrderBy(id => id, comparer))
                     {
-                        var variant = propertyListFile[key];
+                        var variant = propertyListFile[id];
                         var type = variant.GetType();
                         if (typeHandlers.ContainsKey(type) == false)
                         {
-                            throw new InvalidOperationException();
+                            throw new InvalidOperationException(
+                                string.Format("a handler for variant type {0} has not been implemented",
+                                              type.Name));
                         }
                         var handler = typeHandlers[type];
 
                         writer.WriteStartElement(handler.Name);
-                        writer.WriteAttributeString("id", key.ToString("X8"));
+
+                        if (propertyNames.ContainsKey(id) == true)
+                        {
+                            writer.WriteAttributeString("id", propertyNames[id]);
+                        }
+                        else
+                        {
+                            writer.WriteAttributeString("id", "0x" + id.ToString("X8"));
+                        }
+
                         handler.ExportVariant(variant, writer);
                         writer.WriteEndElement();
                     }
@@ -203,16 +234,17 @@ namespace Gibbed.SimCity5.PropConvert
                             }
                             var handler = nameHandlers[property.Name];
 
-                            var id = property.GetAttribute("id", "");
-                            if (string.IsNullOrEmpty(id) == true)
+                            var idText = property.GetAttribute("id", "");
+                            if (string.IsNullOrEmpty(idText) == true)
                             {
                                 throw new InvalidOperationException();
                             }
-                            var key = uint.Parse(id, NumberStyles.AllowHexSpecifier);
+
+                            var id = uint.Parse(idText, NumberStyles.AllowHexSpecifier);
 
                             BaseVariant variant;
                             handler.ImportVariant(property.CreateNavigator(), out variant);
-                            propertyListFile[key] = variant;
+                            propertyListFile[id] = variant;
                         }
                     }
                 }

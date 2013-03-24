@@ -20,40 +20,39 @@
  *    distribution.
  */
 
+using System;
+using System.Globalization;
 using System.Xml;
 using System.Xml.XPath;
-using Gibbed.SimCity5.FileFormats.Variants;
+using Gibbed.SimCity5.FileFormats;
+using Gibbed.SimCity5.FileFormats.Variants.Arrays;
 
-namespace Gibbed.SimCity5.PropConvert.Handlers
+namespace Gibbed.SimCity5.PropConvert.Handlers.Arrays
 {
-    internal abstract class SimpleValueHandler<TVariant, TValue> : ValueHandler<TVariant, TValue>
-        where TVariant : ValueVariant<TValue>, new()
+    internal class ColorRgbaArrayHandler : SimpleArrayHandler<ColorRgbaArrayVariant, ColorRgba>
     {
-        protected override sealed void ExportVariant(TVariant variant, XmlWriter writer)
+        public override string Name
         {
-            this.ExportAttributes(variant, writer);
-            this.ExportValue(variant.Value, writer);
+            get { return "colorRGBAs"; }
         }
 
-        protected virtual void ExportAttributes(TVariant variant, XmlWriter writer)
+        protected override string ItemName
         {
+            get { return "colorRGBA"; }
         }
 
-        protected abstract void ExportValue(TValue value, XmlWriter writer);
-
-        protected override sealed void ImportVariant(XPathNavigator nav, out TVariant variant)
+        protected override void ExportItem(ColorRgba value, XmlWriter writer)
         {
-            TValue dummy;
-            variant = new TVariant();
-            this.ImportAttributes(nav, variant);
-            this.ImportValue(nav, out dummy);
-            variant.Value = dummy;
+            writer.WriteValue(string.Format("{0},{1},{2},{3}",
+                                            value.R.ToString(CultureInfo.InvariantCulture),
+                                            value.G.ToString(CultureInfo.InvariantCulture),
+                                            value.B.ToString(CultureInfo.InvariantCulture),
+                                            value.A.ToString(CultureInfo.InvariantCulture)));
         }
 
-        protected virtual void ImportAttributes(XPathNavigator nav, TVariant variant)
+        protected override void ImportItem(XPathNavigator nav, out ColorRgba value)
         {
+            throw new NotImplementedException();
         }
-
-        protected abstract void ImportValue(XPathNavigator nav, out TValue value);
     }
 }

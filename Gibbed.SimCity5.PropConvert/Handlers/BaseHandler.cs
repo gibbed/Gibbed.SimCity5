@@ -32,6 +32,7 @@ namespace Gibbed.SimCity5.PropConvert.Handlers
     {
         public abstract string Name { get; }
         public abstract Type Type { get; }
+
         public abstract void ExportVariant(BaseVariant variant, XmlWriter writer);
         public abstract void ImportVariant(XPathNavigator nav, out BaseVariant variant);
 
