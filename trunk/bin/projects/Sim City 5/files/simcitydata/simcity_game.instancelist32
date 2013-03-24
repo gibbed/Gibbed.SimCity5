@@ -1,4 +1,10 @@
-; 2990/12063 (24%)
+; 2998/12063 (24%)
+2k_terrain_coaldeposit
+2k_terrain_forest
+2k_terrain_oilreservoir
+2k_terrain_oredeposit
+2k_terrain_soil
+2k_terrain_watertable
 abandonedalert
 achievementslayout
 advisor_female_bigbiz_metals
@@ -2496,6 +2502,7 @@ road_4way_d_mw
 road_4way_d_mw_curve
 road_ave_d_mw
 road_ave_d_mw_curve
+road_demolishfill
 road_dirt
 road_dirt_curve
 roadalert
@@ -2683,6 +2690,7 @@ television
 templatebuilding
 templatemissions
 temproadmap
+terraineditor
 test-toggle-button
 text_input_style
 text_input_style002
