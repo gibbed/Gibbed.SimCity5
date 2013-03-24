@@ -1,4 +1,4 @@
-; 2988/12063 (24%)
+; 2990/12063 (24%)
 abandonedalert
 achievementslayout
 advisor_female_bigbiz_metals
@@ -1043,6 +1043,7 @@ homelessalert
 hospital
 hotel
 hotels
+hq
 hud_alert_background
 hud_bkgrnd_alerttab
 hud_bkgrnd_alerttab2
@@ -2058,6 +2059,7 @@ menulgtilewithdot
 menurightcap
 menusmtilenodot
 metal
+meteorshower
 metertrendarrowdown
 metertrendarrowup
 middionconnection

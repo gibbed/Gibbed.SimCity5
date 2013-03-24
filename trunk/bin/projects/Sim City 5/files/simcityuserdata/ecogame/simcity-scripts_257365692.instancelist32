@@ -1,4 +1,4 @@
-; 2293/9547 (24%)
+; 2295/9547 (24%)
 abandoned
 abandonedenabled
 abducted
@@ -743,6 +743,7 @@ hotitemsw3consumedyesterday_night
 hotitemsw3producedyesterday_day
 hotitemsw3producedyesterday_night
 hour
+hq
 hq_casino_built
 hq_casino_entertainment_module_built
 hq_casino_entertainment_module_ison
@@ -1073,6 +1074,7 @@ metaltransport
 metaltransporttosend
 metalunlocked
 meteor
+meteorshower
 meteorshowerstage
 miningresourcessold
 minuteswaitedforbustoday
