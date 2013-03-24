@@ -41,8 +41,6 @@ namespace Gibbed.SimCity5.PropConvert
             return Path.GetFileName(System.Reflection.Assembly.GetExecutingAssembly().Location);
         }
 
-        private static ProjectData.HashList<uint> _Names;
-
         public static void Main(string[] args)
         {
             var mode = Mode.Unknown;
