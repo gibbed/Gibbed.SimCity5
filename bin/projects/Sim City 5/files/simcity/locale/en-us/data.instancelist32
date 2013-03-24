@@ -1,4 +1,4 @@
-; 61/175 (34%)
+; 62/175 (35%)
 actors
 agentquery
 alerts
@@ -15,6 +15,7 @@ commonbuttons
 cursorattachments
 datalayerlegend
 dialogmessages
+dlc
 errormessages
 gameentry
 gifting
