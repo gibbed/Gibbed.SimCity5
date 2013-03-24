@@ -1,4 +1,4 @@
-; 2998/12063 (24%)
+; 3007/12063 (24%)
 2k_terrain_coaldeposit
 2k_terrain_forest
 2k_terrain_oilreservoir
@@ -626,6 +626,7 @@ coal_t1_minehead
 coal_trade_lot
 coaladdcheat
 coalalert
+coalecomapbrushes
 coalminezone
 coalmininghq
 coalplant
@@ -740,6 +741,8 @@ debug
 default
 demolish
 densityhappinessmeter
+desirabilityecomapbrushes
+desirabilitytwoecomapbrushes
 destruction
 dezone
 dezone_all
@@ -901,6 +904,7 @@ flatbedtruck
 foam
 forest
 forest_painter
+forestecomapbrushes
 fpo-progress1
 fpo-progress2
 fpo-progress3
@@ -2117,6 +2121,7 @@ oil
 oil_map
 oilalert
 oilcrude
+oilecomapbrushes
 oilheavy
 oillight
 oilreservoirpainter
@@ -2126,6 +2131,7 @@ ore
 ore_map
 orealert
 oredepositpainter
+oreecomapbrushes
 oreheavy
 oreraw
 origin-down
@@ -2637,6 +2643,7 @@ smelting_t1_outputlot
 smelting_t1_smeltingfactory
 soil
 soil_painter
+soilecomapbrushes
 solarpower_advancedpanel
 solarpower_basestation
 solarpower_basicpanel
@@ -2691,6 +2698,7 @@ templatebuilding
 templatemissions
 temproadmap
 terraineditor
+tessendorfwater
 test-toggle-button
 text_input_style
 text_input_style002
@@ -2952,6 +2960,7 @@ watertable
 water-table
 water-table_pollution
 watertabledryalert
+watertableecomapbrushes
 watertablelight
 watertablelowalert
 whitegradbar
