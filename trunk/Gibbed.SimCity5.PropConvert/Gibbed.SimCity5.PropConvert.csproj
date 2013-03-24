@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Handlers\ArrayHandler.cs" />
+    <Compile Include="Handlers\Arrays\BoolArrayHandler.cs" />
     <Compile Include="Handlers\Arrays\BoundingBoxArrayHandler.cs" />
     <Compile Include="Handlers\Arrays\ColorRgbaArrayHandler.cs" />
     <Compile Include="Handlers\Arrays\ColorRgbArrayHandler.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="Handlers\Arrays\Int32ArrayHandler.cs" />
     <Compile Include="Handlers\Arrays\ResourceKeyArrayHandler.cs" />
     <Compile Include="Handlers\Arrays\String8ArrayHandler.cs" />
+    <Compile Include="Handlers\Arrays\TextArrayHandler.cs" />
     <Compile Include="Handlers\Arrays\TransformArrayHandler.cs" />
     <Compile Include="Handlers\Arrays\UInt32ArrayHandler.cs" />
     <Compile Include="Handlers\Arrays\Vector2ArrayHandler.cs" />
