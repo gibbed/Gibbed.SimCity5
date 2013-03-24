@@ -26,18 +26,18 @@ namespace Gibbed.SimCity5.PropConvert
 {
     internal class NameComparer : IComparer<uint>
     {
-        private readonly ProjectData.HashList<uint> _Names;
+        private readonly Dictionary<uint, string> _Names;
 
-        public NameComparer(ProjectData.HashList<uint> names)
+        public NameComparer(Dictionary<uint, string> names)
         {
             this._Names = names;
         }
 
         public int Compare(uint x, uint y)
         {
-            if (this._Names.Contains(x) == false)
+            if (this._Names.ContainsKey(x) == false)
             {
-                if (this._Names.Contains(y) == false)
+                if (this._Names.ContainsKey(y) == false)
                 {
                     if (x == y)
                     {
@@ -50,7 +50,7 @@ namespace Gibbed.SimCity5.PropConvert
                 return 1;
             }
 
-            if (this._Names.Contains(y) == false)
+            if (this._Names.ContainsKey(y) == false)
             {
                 return -1;
             }

@@ -20,40 +20,40 @@
  *    distribution.
  */
 
+using System;
+using System.Globalization;
 using System.Xml;
 using System.Xml.XPath;
-using Gibbed.SimCity5.FileFormats.Variants;
+using Gibbed.SimCity5.FileFormats.Variants.Arrays;
 
-namespace Gibbed.SimCity5.PropConvert.Handlers
+namespace Gibbed.SimCity5.PropConvert.Handlers.Arrays
 {
-    internal abstract class SimpleValueHandler<TVariant, TValue> : ValueHandler<TVariant, TValue>
-        where TVariant : ValueVariant<TValue>, new()
+    internal class Int32ArrayHandler : SimpleArrayHandler<Int32ArrayVariant, int>
     {
-        protected override sealed void ExportVariant(TVariant variant, XmlWriter writer)
+        public override string Name
         {
-            this.ExportAttributes(variant, writer);
-            this.ExportValue(variant.Value, writer);
+            get { return "int32s"; }
         }
 
-        protected virtual void ExportAttributes(TVariant variant, XmlWriter writer)
+        protected override string ItemName
         {
+            get { return "int32"; }
         }
 
-        protected abstract void ExportValue(TValue value, XmlWriter writer);
-
-        protected override sealed void ImportVariant(XPathNavigator nav, out TVariant variant)
+        protected override void ExportItem(int value, XmlWriter writer)
         {
-            TValue dummy;
-            variant = new TVariant();
-            this.ImportAttributes(nav, variant);
-            this.ImportValue(nav, out dummy);
-            variant.Value = dummy;
+            writer.WriteValue(value.ToString(CultureInfo.InvariantCulture));
         }
 
-        protected virtual void ImportAttributes(XPathNavigator nav, TVariant variant)
+        protected override void ImportItem(XPathNavigator nav, out int value)
         {
+            if (int.TryParse(nav.Value,
+                             NumberStyles.Integer,
+                             CultureInfo.InvariantCulture,
+                             out value) == false)
+            {
+                throw new FormatException();
+            }
         }
-
-        protected abstract void ImportValue(XPathNavigator nav, out TValue value);
     }
 }

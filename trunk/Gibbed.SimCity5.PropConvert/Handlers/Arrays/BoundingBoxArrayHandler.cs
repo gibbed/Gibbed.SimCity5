@@ -24,36 +24,40 @@ using System;
 using System.Globalization;
 using System.Xml;
 using System.Xml.XPath;
+using Gibbed.SimCity5.FileFormats;
 using Gibbed.SimCity5.FileFormats.Variants.Arrays;
 
 namespace Gibbed.SimCity5.PropConvert.Handlers.Arrays
 {
-    internal class UInt32ArrayHandler : SimpleArrayHandler<UInt32ArrayVariant, uint>
+    internal class BoundingBoxArrayHandler : SimpleArrayHandler<BoundingBoxArrayVariant, BoundingBox>
     {
         public override string Name
         {
-            get { return "uint32s"; }
+            get { return "bboxes"; }
         }
 
         protected override string ItemName
         {
-            get { return "uint32"; }
+            get { return "bbox"; }
         }
 
-        protected override void ExportItem(uint value, XmlWriter writer)
+        protected override void ExportItem(BoundingBox value, XmlWriter writer)
         {
-            writer.WriteValue(value.ToString(CultureInfo.InvariantCulture));
+            writer.WriteElementString("min",
+                                      string.Format("{0},{1},{2}",
+                                                    value.Minimum.X.ToString(CultureInfo.InvariantCulture),
+                                                    value.Minimum.Y.ToString(CultureInfo.InvariantCulture),
+                                                    value.Minimum.Z.ToString(CultureInfo.InvariantCulture)));
+            writer.WriteElementString("max",
+                                      string.Format("{0},{1},{2}",
+                                                    value.Maximum.X.ToString(CultureInfo.InvariantCulture),
+                                                    value.Maximum.Y.ToString(CultureInfo.InvariantCulture),
+                                                    value.Maximum.Z.ToString(CultureInfo.InvariantCulture)));
         }
 
-        protected override void ImportItem(XPathNavigator nav, out uint value)
+        protected override void ImportItem(XPathNavigator nav, out BoundingBox value)
         {
-            if (uint.TryParse(nav.Value,
-                              NumberStyles.Integer,
-                              CultureInfo.InvariantCulture,
-                              out value) == false)
-            {
-                throw new FormatException();
-            }
+            throw new NotImplementedException();
         }
     }
 }
