@@ -27,7 +27,7 @@ using Gibbed.IO;
 
 namespace Gibbed.SimCity5.FileFormats.Variants.Arrays
 {
-    public class TextArrayVariant : ArrayVariant<LocalizedText>
+    public sealed class TextArrayVariant : ArrayVariant<LocalizedText>
     {
         public TextArrayVariant()
             : this(default(IEnumerable<LocalizedText>))

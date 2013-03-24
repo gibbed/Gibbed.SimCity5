@@ -27,7 +27,7 @@ using Gibbed.IO;
 
 namespace Gibbed.SimCity5.FileFormats.Variants.Arrays
 {
-    public class UInt32ArrayVariant : ArrayVariant<uint>
+    public sealed class UInt32ArrayVariant : ArrayVariant<uint>
     {
         public UInt32ArrayVariant()
             : this(default(IEnumerable<uint>))

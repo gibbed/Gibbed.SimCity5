@@ -27,7 +27,7 @@ using Gibbed.IO;
 
 namespace Gibbed.SimCity5.FileFormats.Variants.Arrays
 {
-    public class TransformArrayVariant : ArrayVariant<Transform>
+    public sealed class TransformArrayVariant : ArrayVariant<Transform>
     {
         public TransformArrayVariant()
             : this(default(IEnumerable<Transform>))

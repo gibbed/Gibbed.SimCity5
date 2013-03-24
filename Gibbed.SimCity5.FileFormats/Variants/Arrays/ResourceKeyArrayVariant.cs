@@ -28,7 +28,7 @@ using Gibbed.IO;
 
 namespace Gibbed.SimCity5.FileFormats.Variants.Arrays
 {
-    public class ResourceKeyArrayVariant : ArrayVariant<ResourceKey>
+    public sealed class ResourceKeyArrayVariant : ArrayVariant<ResourceKey>
     {
         public ResourceKeyArrayVariant()
             : this(default(IEnumerable<ResourceKey>))

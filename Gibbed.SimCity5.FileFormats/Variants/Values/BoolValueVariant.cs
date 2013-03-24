@@ -25,7 +25,7 @@ using Gibbed.IO;
 
 namespace Gibbed.SimCity5.FileFormats.Variants.Values
 {
-    public class BoolValueVariant : ValueVariant<bool>
+    public sealed class BoolValueVariant : ValueVariant<bool>
     {
         public BoolValueVariant()
             : this(default(bool))
@@ -46,8 +46,6 @@ namespace Gibbed.SimCity5.FileFormats.Variants.Values
         {
             get { return 1; }
         }
-
-        public override bool Value { get; set; }
 
         public static explicit operator BoolValueVariant(bool value)
         {

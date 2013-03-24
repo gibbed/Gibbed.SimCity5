@@ -32,7 +32,7 @@ namespace Gibbed.SimCity5.FileFormats.Variants
     {
         private List<TType> _Value;
 
-        public virtual IEnumerable<TType> Value
+        public IEnumerable<TType> Value
         {
             get { return this._Value == null ? null : this._Value.ToList(); }
             set { this._Value = value == null ? null : value.ToList(); }
@@ -55,7 +55,6 @@ namespace Gibbed.SimCity5.FileFormats.Variants
         internal ArrayVariant(IEnumerable<TType> value)
         {
             this.Value = value;
-            this.Flags = VariantFlags.RequiresAllocation | VariantFlags.Array | VariantFlags.Unknown7;
         }
 
         internal override sealed void Serialize(Stream output, Endian endian)
@@ -63,30 +62,34 @@ namespace Gibbed.SimCity5.FileFormats.Variants
             var itemCount = this._Value == null ? 0 : this._Value.Count;
             output.WriteValueS32(itemCount, endian);
             output.WriteValueS32(this.MemorySize, endian);
-            
-            var itemFileSize = this.FileSize;
-            if (itemFileSize != -1)
+
+            if (this._Value != null &&
+                this._Value.Count > 0)
             {
-                var itemBytes = new byte[itemCount * (uint)itemFileSize];
-                using (var data = new MemoryStream(itemBytes, true))
+                var itemFileSize = this.FileSize;
+                if (itemFileSize != -1)
+                {
+                    var itemBytes = new byte[itemCount * (uint)itemFileSize];
+                    using (var data = new MemoryStream(itemBytes, true))
+                    {
+                        foreach (var item in this._Value)
+                        {
+                            this.SerializeItem(item, data, endian);
+                        }
+
+                        if (data.Position != data.Length)
+                        {
+                            throw new FormatException();
+                        }
+                    }
+                    output.WriteBytes(itemBytes);
+                }
+                else
                 {
                     foreach (var item in this._Value)
                     {
-                        this.SerializeItem(item, data, endian);
+                        this.SerializeItem(item, output, endian);
                     }
-
-                    if (data.Position != data.Length)
-                    {
-                        throw new FormatException();
-                    }
-                }
-                output.WriteBytes(itemBytes);
-            }
-            else
-            {
-                foreach (var item in this._Value)
-                {
-                    this.SerializeItem(item, output, endian);
                 }
             }
         }

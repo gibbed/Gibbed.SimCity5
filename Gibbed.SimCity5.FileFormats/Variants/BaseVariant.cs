@@ -36,7 +36,7 @@ namespace Gibbed.SimCity5.FileFormats.Variants
 
         public abstract VariantType Type { get; }
 
-        internal virtual VariantFlags Flags
+        internal VariantFlags Flags
         {
             get { return this._Flags; }
             set

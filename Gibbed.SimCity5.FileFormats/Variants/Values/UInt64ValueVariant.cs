@@ -26,7 +26,7 @@ using Gibbed.IO;
 
 namespace Gibbed.SimCity5.FileFormats.Variants.Values
 {
-    public class UInt64ValueVariant : ValueVariant<ulong>
+    public sealed class UInt64ValueVariant : ValueVariant<ulong>
     {
         public UInt64ValueVariant()
             : this(default(ulong))

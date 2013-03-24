@@ -27,7 +27,7 @@ using Gibbed.IO;
 
 namespace Gibbed.SimCity5.FileFormats.Variants.Arrays
 {
-    public class ColorRgbaArrayVariant : ArrayVariant<ColorRgba>
+    public sealed class ColorRgbaArrayVariant : ArrayVariant<ColorRgba>
     {
         public ColorRgbaArrayVariant()
             : this(default(IEnumerable<ColorRgba>))

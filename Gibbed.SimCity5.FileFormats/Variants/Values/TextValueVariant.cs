@@ -25,7 +25,7 @@ using Gibbed.IO;
 
 namespace Gibbed.SimCity5.FileFormats.Variants.Values
 {
-    public class TextValueVariant : ValueVariant<LocalizedText>
+    public sealed class TextValueVariant : ValueVariant<LocalizedText>
     {
         public TextValueVariant()
             : this(default(LocalizedText))

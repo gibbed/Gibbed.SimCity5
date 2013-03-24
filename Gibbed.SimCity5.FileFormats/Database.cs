@@ -364,7 +364,7 @@ namespace Gibbed.SimCity5.FileFormats
                 this._Stream.Seek(this._BaseOffset + this._EndOfDataOffset, SeekOrigin.Begin);
                 dbpf.WriteIndex(this._Stream);
 
-                uint indexSize = (uint)(this._Stream.Position - (this._BaseOffset + this._EndOfDataOffset));
+                var indexSize = (uint)(this._Stream.Position - (this._BaseOffset + this._EndOfDataOffset));
 
                 this._Stream.Seek(this._BaseOffset, SeekOrigin.Begin);
                 dbpf.WriteHeader(this._Stream, this._EndOfDataOffset, indexSize);
@@ -459,7 +459,7 @@ namespace Gibbed.SimCity5.FileFormats
 
                 dbpf.WriteIndex(clean);
 
-                uint indexSize = (uint)(clean.Position - this._EndOfDataOffset);
+                var indexSize = (uint)(clean.Position - this._EndOfDataOffset);
 
                 clean.Seek(0, SeekOrigin.Begin);
                 dbpf.WriteHeader(clean, this._EndOfDataOffset, indexSize);

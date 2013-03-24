@@ -25,7 +25,7 @@ using Gibbed.IO;
 
 namespace Gibbed.SimCity5.FileFormats.Variants.Values
 {
-    public class Vector4ValueVariant : ValueVariant<Vector4>
+    public sealed class Vector4ValueVariant : ValueVariant<Vector4>
     {
         public Vector4ValueVariant()
             : this(default(Vector4))

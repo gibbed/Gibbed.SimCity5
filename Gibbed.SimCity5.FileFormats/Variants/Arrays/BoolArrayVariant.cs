@@ -27,7 +27,7 @@ using Gibbed.IO;
 
 namespace Gibbed.SimCity5.FileFormats.Variants.Arrays
 {
-    public class BoolArrayVariant : ArrayVariant<bool>
+    public sealed class BoolArrayVariant : ArrayVariant<bool>
     {
         public BoolArrayVariant()
             : this(default(IEnumerable<bool>))

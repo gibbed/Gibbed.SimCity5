@@ -25,7 +25,7 @@ using Gibbed.IO;
 
 namespace Gibbed.SimCity5.FileFormats.Variants.Values
 {
-    public class TransformValueVariant : ValueVariant<Transform>
+    public sealed class TransformValueVariant : ValueVariant<Transform>
     {
         public TransformValueVariant()
             : this(default(Transform))
