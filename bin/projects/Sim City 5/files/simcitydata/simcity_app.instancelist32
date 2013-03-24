@@ -1,4 +1,4 @@
-; 746/1875 (39%)
+; 756/1875 (40%)
 03_green_challenge_large_gamescom
 03_green_challenge_small_gamescom
 07_population_explosion_large
@@ -16,6 +16,7 @@ ajax-loader
 alertswindow
 animate
 animated_clouds
+appstates
 arialunicodeea
 autogenbuttonnineslicestyles
 autogenwindownineslicestyles
@@ -175,6 +176,7 @@ capetrinity_1026_zoom
 capetrinity_1027_zoom
 capetrinity_1028_zoom
 capetrinity_isometricmap
+capetrinity_loadingbackdrop
 challengelbentry
 challengelbexpandedentry
 challengelbmyregionsdivider
@@ -218,6 +220,7 @@ cityresources-rating-0
 cityresources-rating-1
 cityresources-rating-2
 cityresources-rating-3
+cliffsidevista_loadingbackdrop
 close-button_tab
 close-icon
 cloud01
@@ -230,6 +233,7 @@ confluence_1028_zoom
 confluence_1029_zoom
 confluence_1030_zoom
 confluence_isometricmap
+confluence_loadingbackdrop
 containergame
 containerhome3
 contentunavailablemessage
@@ -342,6 +346,7 @@ horizon_1034_zoom
 horizon_1035_zoom
 horizon_1036_zoom
 horizon_isometricmap
+horizon_loadingbackdrop
 hublayout
 icn-challanges-population-explosion
 icn-originfriends
@@ -362,6 +367,7 @@ icon-private
 icon-privateregion-on
 icon-sandbox-on
 icon-unlock
+impostor_forest
 ingametabbg
 invitefriendstoregion
 invitelist-footer
@@ -605,6 +611,7 @@ sawyer_1039_zoom
 sawyer_1040_zoom
 sawyer_1041_zoom
 sawyer_isometricmap
+sawyer_loadingbackdrop
 scrui_min
 search_normal
 serverselectrow
@@ -641,6 +648,7 @@ tabbracketr
 tabsmallnorm
 tabsmallon
 tabsmallover
+terraineditor
 test
 test2
 textinputstyles
@@ -666,9 +674,11 @@ toppagefade
 transitionspeech
 transparent
 tree
+tutorial_loadingbackdrop
 twincities_1026_zoom
 twincities_1027_zoom
 twincities_isometricmap
+twincities_loadingbackdrop
 ui_wantsfears_tb_happy1_stretch-b
 ui_wantsfears_tb_happy1_stretch-bl
 ui_wantsfears_tb_happy1_stretch-br
