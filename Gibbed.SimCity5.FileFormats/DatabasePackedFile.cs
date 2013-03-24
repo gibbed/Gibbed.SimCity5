@@ -93,7 +93,6 @@ namespace Gibbed.SimCity5.FileFormats
                     header.Unset34 != 0 ||
                     header.Unset38 != 0 ||
                     header.Unset48 != 0 ||
-                    header.Unset4C != 0 ||
                     header.Unset50 != 0 ||
                     header.Unset54 != 0 ||
                     header.Unset58 != 0 ||
@@ -138,7 +137,6 @@ namespace Gibbed.SimCity5.FileFormats
                 if (header.Unset2C != 0 ||
                     header.Unset30 != 0 ||
                     header.Unset40 != 0 ||
-                    header.Unset44 != 0 ||
                     header.Unset48 != 0 ||
                     header.Unset4C != 0 ||
                     header.Unset50 != 0 ||
@@ -167,17 +165,17 @@ namespace Gibbed.SimCity5.FileFormats
                 indexSize = header.IndexSize;
             }
 
-            if (indexOffset == 0)
-            {
-                throw new FormatException();
-            }
-
+            this._Entries.Clear();
             this.IndexOffset = indexOffset;
             this.IndexSize = indexSize;
 
-            this._Entries.Clear();
             if (indexCount > 0)
             {
+                if (indexOffset == 0)
+                {
+                    throw new FormatException();
+                }
+
                 input.Seek(indexOffset, SeekOrigin.Begin);
 
                 using (var data = input.ReadToMemoryStream(indexSize))
@@ -231,8 +229,8 @@ namespace Gibbed.SimCity5.FileFormats
                             {
                                 throw new FormatException("strange index data");
                                 compressionScheme = compressedSize == uncompressedSize
-                                                      ? CompressionScheme.None
-                                                      : CompressionScheme.RefPack;
+                                                        ? CompressionScheme.None
+                                                        : CompressionScheme.RefPack;
                                 flags = 0;
                             }
                         }
@@ -277,9 +275,9 @@ namespace Gibbed.SimCity5.FileFormats
         {
             if (this.IsBig == false)
             {
-                output.WriteValueU32(Header.Signature, Endian.Little);
                 var header = new Header
                 {
+                    Magic = Header.Signature,
                     MajorVersion = this._Version.Major,
                     MinorVersion = this._Version.Minor,
                     IndexType = 3,
@@ -291,9 +289,9 @@ namespace Gibbed.SimCity5.FileFormats
             }
             else
             {
-                output.WriteValueU32(BigHeader.Signature, Endian.Little);
                 var header = new BigHeader
                 {
+                    Magic = BigHeader.Signature,
                     MajorVersion = this._Version.Major,
                     MinorVersion = this._Version.Minor,
                     IndexType = 3,
@@ -455,8 +453,7 @@ namespace Gibbed.SimCity5.FileFormats
             public readonly uint Unset38;
             public uint IndexType; // Always 3?
             public long IndexOffset;
-            public readonly uint Unset48;
-            public readonly uint Unset4C;
+            public readonly long Unset48;
             public readonly uint Unset50;
             public readonly uint Unset54;
             public readonly uint Unset58;
@@ -483,8 +480,7 @@ namespace Gibbed.SimCity5.FileFormats
             public readonly uint Unset30;
             public uint IndexType; // Always 3?
             public long IndexOffset;
-            public readonly uint Unset40;
-            public readonly uint Unset44;
+            public readonly long Unset40;
             public readonly uint Unset48;
             public readonly uint Unset4C;
             public readonly uint Unset50;
