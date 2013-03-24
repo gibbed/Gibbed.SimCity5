@@ -40,12 +40,68 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoundingBox.cs" />
+    <Compile Include="ColorRgb.cs" />
+    <Compile Include="ColorRgba.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DatabasePackedFile.cs" />
+    <Compile Include="Matrix3.cs" />
+    <Compile Include="PropertyListFile.cs" />
     <Compile Include="ProjectHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResourceKey.cs" />
     <Compile Include="StringHelpers.cs" />
+    <Compile Include="LocalizedText.cs" />
+    <Compile Include="Transform.cs" />
+    <Compile Include="VariantFlags.cs" />
+    <Compile Include="Variants\Arrays\BoolArrayVariant.cs" />
+    <Compile Include="Variants\Arrays\BoundingBoxArrayVariant.cs" />
+    <Compile Include="Variants\Arrays\ColorRgbaArrayVariant.cs" />
+    <Compile Include="Variants\Arrays\ColorRgbArrayVariant.cs" />
+    <Compile Include="Variants\Arrays\Float32ArrayVariant.cs" />
+    <Compile Include="Variants\Arrays\Int32ArrayVariant.cs" />
+    <Compile Include="Variants\Arrays\ResourceKeyArrayVariant.cs" />
+    <Compile Include="Variants\Arrays\String16ArrayVariant.cs" />
+    <Compile Include="Variants\Arrays\String8ArrayVariant.cs" />
+    <Compile Include="Variants\Arrays\TextArrayVariant.cs" />
+    <Compile Include="Variants\Arrays\TransformArrayVariant.cs" />
+    <Compile Include="Variants\Arrays\UInt32ArrayVariant.cs" />
+    <Compile Include="Variants\Arrays\Vector2ArrayVariant.cs" />
+    <Compile Include="Variants\Arrays\Vector3ArrayVariant.cs" />
+    <Compile Include="Variants\Arrays\Vector4ArrayVariant.cs" />
+    <Compile Include="Variants\ArrayVariantFactory.cs" />
+    <Compile Include="Variants\ArrayVariant.cs" />
+    <Compile Include="Variants\ValueVariant.cs" />
+    <Compile Include="Variants\BaseVariant.cs" />
+    <Compile Include="Variants\Values\BoolValueVariant.cs" />
+    <Compile Include="Variants\Values\BoundingBoxValueVariant.cs" />
+    <Compile Include="Variants\Values\Char16ValueVariant.cs" />
+    <Compile Include="Variants\Values\Char8ValueVariant.cs" />
+    <Compile Include="Variants\Values\ColorRgbaValueVariant.cs" />
+    <Compile Include="Variants\Values\ColorRgbValueVariant.cs" />
+    <Compile Include="Variants\Values\Float32ValueVariant.cs" />
+    <Compile Include="Variants\Values\Float64ValueVariant.cs" />
+    <Compile Include="Variants\Values\Int16ValueVariant.cs" />
+    <Compile Include="Variants\Values\Int32ValueVariant.cs" />
+    <Compile Include="Variants\Values\Int64ValueVariant.cs" />
+    <Compile Include="Variants\Values\Int8ValueVariant.cs" />
+    <Compile Include="Variants\Values\ResourceKeyValueVariant.cs" />
+    <Compile Include="Variants\Values\String16ValueVariant.cs" />
+    <Compile Include="Variants\Values\String8ValueVariant.cs" />
+    <Compile Include="Variants\Values\TextValueVariant.cs" />
+    <Compile Include="Variants\Values\TransformValueVariant.cs" />
+    <Compile Include="Variants\Values\UInt16ValueVariant.cs" />
+    <Compile Include="Variants\Values\UInt32ValueVariant.cs" />
+    <Compile Include="Variants\Values\UInt64ValueVariant.cs" />
+    <Compile Include="Variants\Values\UInt8ValueVariant.cs" />
+    <Compile Include="Variants\Values\Vector2ValueVariant.cs" />
+    <Compile Include="Variants\Values\Vector3ValueVariant.cs" />
+    <Compile Include="Variants\Values\Vector4ValueVariant.cs" />
+    <Compile Include="Variants\ValueVariantFactory.cs" />
+    <Compile Include="VariantType.cs" />
+    <Compile Include="Vector2.cs" />
+    <Compile Include="Vector3.cs" />
+    <Compile Include="Vector4.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gibbed.IO\Gibbed.IO.csproj">
@@ -61,6 +117,7 @@
       <Name>Gibbed.RefPack</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

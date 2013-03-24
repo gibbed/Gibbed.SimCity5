@@ -24,6 +24,8 @@ namespace Gibbed.SimCity5.FileFormats
 {
     public struct ResourceKey
     {
+        public static readonly ResourceKey Zero = new ResourceKey();
+
         public readonly uint TypeId;
         public readonly uint GroupId;
         public readonly ulong InstanceId;
