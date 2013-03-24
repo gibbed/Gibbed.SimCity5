@@ -1,4 +1,4 @@
-﻿/* Copyright (c) 2011 Rick (rick 'at' gibbed 'dot' us)
+﻿/* Copyright (c) 2013 Rick (rick 'at' gibbed 'dot' us)
  * 
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -26,12 +26,12 @@ namespace Gibbed.SimCity5.FileFormats
 {
     public static class StringHelpers
     {
-        public static UInt32 HashFNV32(this string input)
+        public static uint HashFNV32(this string input)
         {
-            return input.HashFNV32(0x811C9DC5);
+            return input.HashFNV32(0x811C9DC5u);
         }
 
-        public static UInt32 HashFNV32(this string input, UInt32 hash)
+        public static uint HashFNV32(this string input, uint seed)
         {
             if (input == null)
             {
@@ -44,21 +44,22 @@ namespace Gibbed.SimCity5.FileFormats
             }
 
             var lower = input.ToLowerInvariant();
+
+            var hash = seed;
             foreach (char t in lower)
             {
-                hash *= 0x1000193;
+                hash *= 0x1000193u;
                 hash ^= t;
             }
-
             return hash;
         }
 
-        public static UInt64 HashFNV64(this string input)
+        public static ulong HashFNV64(this string input)
         {
-            return input.HashFNV64(0xCBF29CE484222325);
+            return input.HashFNV64(0xCBF29CE484222325ul);
         }
 
-        public static UInt64 HashFNV64(this string input, UInt64 hash)
+        public static ulong HashFNV64(this string input, ulong seed)
         {
             if (input == null)
             {
@@ -72,12 +73,12 @@ namespace Gibbed.SimCity5.FileFormats
 
             string lower = input.ToLowerInvariant();
 
+            var hash = seed;
             foreach (char t in lower)
             {
-                hash *= 0x00000100000001B3;
+                hash *= 0x00000100000001B3ul;
                 hash ^= t;
             }
-
             return hash;
         }
     }
