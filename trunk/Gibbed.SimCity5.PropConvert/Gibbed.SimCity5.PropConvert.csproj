@@ -51,6 +51,7 @@
     <Compile Include="Handlers\Arrays\Float32ArrayHandler.cs" />
     <Compile Include="Handlers\Arrays\Int32ArrayHandler.cs" />
     <Compile Include="Handlers\Arrays\ResourceKeyArrayHandler.cs" />
+    <Compile Include="Handlers\Arrays\String16ArrayHandler.cs" />
     <Compile Include="Handlers\Arrays\String8ArrayHandler.cs" />
     <Compile Include="Handlers\Arrays\TextArrayHandler.cs" />
     <Compile Include="Handlers\Arrays\TransformArrayHandler.cs" />
