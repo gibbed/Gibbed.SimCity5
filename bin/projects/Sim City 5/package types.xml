@@ -10,9 +10,9 @@
   <type id="0x07B53899"                   ext="delrec"                       >List of records to be deleted for a patch</type>
   <type id="0x08068AEB"                   ext="er2bin" tag="EcoRulesBinary"  >Eco Rules Binary</type>
   <type id="0x08068AEC"                   ext="er2"    tag="EcoRulesScript"  >Eco Rules Script</type>
-  <type id="0x0A4D8D09"                   ext="bnk"    tag="WwiseBNK"        >WWise BNK</type>
+  <type id="0x0A4D8D09"                   ext="bnk"    tag="WwiseBNK"        >Wwise Bank</type>
   <type id="0x0A98EAF0"                   ext="json"   tag="JSONScript"      >JSON Script</type>
-  <type id="0x0D9E5710"                   ext="wem"    tag="WEM"             >WWise WEM</type>
+  <type id="0x0D9E5710"                   ext="wem"    tag="WEM"             >Wwise Encoded Media</type>
   <type id="0x12952634" src="dat"         ext="dat"                          >Generic Data</type>
   <type id="0x276CA4B9" src="ttf"         ext="ttf"                          >TrueType Font</type>
   <type id="0x2C978DB6" src="css"         ext="css"                          >Cascading Style Sheet</type>
